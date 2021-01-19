@@ -5,58 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45f24c81-32e0-4b26-bf97-fc8c512ce24b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/hooks.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rollup.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AttachmentImage/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Button/NewLinkButton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Button/ShowAllButton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Button/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ColorPicker/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Column/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DateDescription/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DescriptionIcon/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DescriptionOverflowImages/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DescriptionRow/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/EmptyResult/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FormComponents/SumOfValuesFormItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FormWithLoader/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ImageUploadFormItem/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/IncDecField/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/InfoRow/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/InfoRowForm/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/List/ListApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/List/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ListItem/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Loading/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Neumorphic/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/OverflowImages/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PageTitle/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/PostCard/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/QuantityBadge/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/QuantityField/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/QueryAutoComplete/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/QuerySelect/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Rate/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/RowStretch/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Section/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SelectItemsRenderer/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Shimmer/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/StarCount/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Tag/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TextListField/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Textfield/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ThreeDot/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/neumorphic.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.cjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.cjs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.esm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Column/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormComponents/SumOfValuesFormItem.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormWithLoader/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ImageUploadFormItem/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +43,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -95,11 +52,13 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/hooks" />
       <recent name="$PROJECT_DIR$/src/reducers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/css" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -116,7 +75,7 @@
       <workItem from="1608758068069" duration="14105000" />
       <workItem from="1610708342126" duration="689000" />
       <workItem from="1611062192531" duration="1449000" />
-      <workItem from="1611067905671" duration="4304000" />
+      <workItem from="1611067905671" duration="5762000" />
     </task>
     <servers />
   </component>

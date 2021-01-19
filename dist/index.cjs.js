@@ -2,17 +2,18 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var React = require('react');
+var React$1 = require('react');
 var moment = require('moment');
 require('moment/locale/tr');
 require('react-router-dom');
 var history$1 = require('history');
 var antd = require('antd');
+var reactColor = require('react-color');
 var icons = require('@ant-design/icons');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
-var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+var React__default = /*#__PURE__*/_interopDefaultLegacy(React$1);
 var moment__default = /*#__PURE__*/_interopDefaultLegacy(moment);
 
 function _defineProperty(obj, key, value) {
@@ -122,8 +123,20 @@ function _slicedToArray(arr, i) {
   return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
 }
 
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
+}
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return _arrayLikeToArray(arr);
+}
+
 function _arrayWithHoles(arr) {
   if (Array.isArray(arr)) return arr;
+}
+
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);
 }
 
 function _iterableToArrayLimit(arr, i) {
@@ -168,6 +181,10 @@ function _arrayLikeToArray(arr, len) {
   for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
 
   return arr2;
+}
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
 
 function _nonIterableRest() {
@@ -613,10 +630,10 @@ var initialState = {
   notifications: [],
   modals: {}
 };
-var StoreContext = /*#__PURE__*/React.createContext(initialState);
+var StoreContext = /*#__PURE__*/React$1.createContext(initialState);
 
 var useLocalStorage = function useLocalStorage(key, defaultValue) {
-  var getItem = React.useCallback(function (_defaultValue) {
+  var getItem = React$1.useCallback(function (_defaultValue) {
     try {
       var value = JSON.parse(window.localStorage.getItem(key));
       return value || _defaultValue || defaultValue;
@@ -624,7 +641,7 @@ var useLocalStorage = function useLocalStorage(key, defaultValue) {
       return defaultValue;
     }
   }, [defaultValue, key]);
-  var setItem = React.useCallback(function (_value) {
+  var setItem = React$1.useCallback(function (_value) {
     try {
       var value = JSON.stringify(_value);
       window.localStorage.setItem(key, value);
@@ -632,7 +649,7 @@ var useLocalStorage = function useLocalStorage(key, defaultValue) {
       window.localStorage.setItem(key, defaultValue || '{}');
     }
   }, [defaultValue, key]);
-  var removeItem = React.useCallback(function () {
+  var removeItem = React$1.useCallback(function () {
     window.localStorage.removeItem(key);
   }, [key]);
   return {
@@ -643,7 +660,7 @@ var useLocalStorage = function useLocalStorage(key, defaultValue) {
 };
 
 var useAuth = function useAuth() {
-  var _useContext = React.useContext(StoreContext),
+  var _useContext = React$1.useContext(StoreContext),
       _useContext2 = _slicedToArray$1(_useContext, 2),
       state = _useContext2[0],
       dispatch = _useContext2[1];
@@ -654,7 +671,7 @@ var useAuth = function useAuth() {
   var _ref = state || {},
       auth = _ref.auth;
 
-  var logout = React.useCallback(function () {
+  var logout = React$1.useCallback(function () {
     setItem("");
     dispatch({
       type: actions.LOGOUT
@@ -677,7 +694,7 @@ var useAuth = function useAuth() {
       }
     }
   }, [dispatch, setItem]);
-  var setToken = React.useCallback(function (token) {
+  var setToken = React$1.useCallback(function (token) {
     if (token) setItem(token);
     dispatch({
       type: actions.SET_TOKEN,
@@ -688,7 +705,7 @@ var useAuth = function useAuth() {
       }
     });
   }, [dispatch, setItem]);
-  var update = React.useCallback(function (data) {
+  var update = React$1.useCallback(function (data) {
     dispatch({
       type: actions.UPDATE_AUTH,
       payload: {
@@ -696,7 +713,7 @@ var useAuth = function useAuth() {
       }
     });
   }, [dispatch]);
-  var login = React.useCallback(function (data) {
+  var login = React$1.useCallback(function (data) {
     setToken(data.token);
     delete data.token;
     dispatch({
@@ -717,18 +734,18 @@ var useAuth = function useAuth() {
 };
 
 var useLoading = function useLoading() {
-  var _useContext = React.useContext(StoreContext),
+  var _useContext = React$1.useContext(StoreContext),
       _useContext2 = _slicedToArray$1(_useContext, 2),
       state = _useContext2[0],
       dispatch = _useContext2[1];
 
   var loading = state.loading;
-  var increase = React.useCallback(function () {
+  var increase = React$1.useCallback(function () {
     dispatch({
       type: actions.INCREASE_LOADING_QUEUE
     });
   }, []);
-  var decrease = React.useCallback(function () {
+  var decrease = React$1.useCallback(function () {
     dispatch({
       type: actions.DECREASE_LOADING_QUEUE
     });
@@ -742,11 +759,11 @@ var useLoading = function useLoading() {
 };
 
 var useNotification = function useNotification() {
-  var _useContext = React.useContext(StoreContext),
+  var _useContext = React$1.useContext(StoreContext),
       _useContext2 = _slicedToArray$1(_useContext, 2),
       dispatch = _useContext2[1];
 
-  var pushNotification = React.useCallback(function (params) {
+  var pushNotification = React$1.useCallback(function (params) {
     var type = params.type,
         rest = _objectWithoutProperties$1(params, ["type"]);
 
@@ -759,17 +776,17 @@ var useNotification = function useNotification() {
       }
     });
   }, [dispatch]);
-  var pushSuccessNotification = React.useCallback(function (params) {
+  var pushSuccessNotification = React$1.useCallback(function (params) {
     pushNotification(_objectSpread2$1({
       type: 'success'
     }, params));
   }, [pushNotification]);
-  var pushErrorNotification = React.useCallback(function (params) {
+  var pushErrorNotification = React$1.useCallback(function (params) {
     pushNotification(_objectSpread2$1({
       type: 'error'
     }, params));
   }, [pushNotification]);
-  var pushInfoNotification = React.useCallback(function (params) {
+  var pushInfoNotification = React$1.useCallback(function (params) {
     pushNotification(_objectSpread2$1({
       type: 'info'
     }, params));
@@ -797,19 +814,19 @@ var useApi = function useApi() {
       token = _useAuth.token,
       logout = _useAuth.logout;
 
-  var _useState = React.useState(_payload),
+  var _useState = React$1.useState(_payload),
       _useState2 = _slicedToArray$1(_useState, 2),
       payload = _useState2[0],
       setPayload = _useState2[1];
 
-  var _useState3 = React.useState(false),
+  var _useState3 = React$1.useState(false),
       _useState4 = _slicedToArray$1(_useState3, 2),
       shouldFetch = _useState4[0],
       setShouldFetch = _useState4[1];
 
   var stringifyPayload = JSON.stringify(payload);
 
-  var _useState5 = React.useState({
+  var _useState5 = React$1.useState({
     firstTimeFetched: false,
     fetched: false,
     fetching: false,
@@ -827,7 +844,7 @@ var useApi = function useApi() {
       payloadOnSuccess = payload.onSuccess,
       payloadOnError = payload.onError,
       payloadPushNotification = payload.pushNotification;
-  var onSuccess = React.useCallback(function (response) {
+  var onSuccess = React$1.useCallback(function (response) {
     var pushNotification = takeUndefinedAsTrue(payloadPushNotification);
     if (payloadOnSuccess) payloadOnSuccess(response);
     decrease();
@@ -847,7 +864,7 @@ var useApi = function useApi() {
       });
     }
   }, [payloadPushNotification, payloadOnSuccess]);
-  var onError = React.useCallback(function (response) {
+  var onError = React$1.useCallback(function (response) {
     var responseJSON = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
     var pushNotification = takeUndefinedAsTrue(payloadPushNotification);
     var notificationObj = {};
@@ -900,11 +917,11 @@ var useApi = function useApi() {
     });
     if (payloadOnError) payloadOnError(responseJSON || response);
   }, [endpoint, payloadPushNotification, payloadOnError]);
-  React.useEffect(function () {
+  React$1.useEffect(function () {
     var initial = payload.initial;
     if (initial) load();
   }, [stringifyPayload]);
-  var updatePayload = React.useCallback(function (__payload) {
+  var updatePayload = React$1.useCallback(function (__payload) {
     setPayload(function (oldPayload) {
       var newPayload = _objectSpread2$1(_objectSpread2$1({}, oldPayload), __payload);
 
@@ -922,7 +939,7 @@ var useApi = function useApi() {
       return newPayload;
     });
   }, []);
-  var updateData = React.useCallback(function () {
+  var updateData = React$1.useCallback(function () {
     setData(function (oldData) {
       return _objectSpread2$1(_objectSpread2$1({}, oldData), {}, {
         fetching: true,
@@ -930,14 +947,14 @@ var useApi = function useApi() {
       });
     });
   }, []);
-  var load = React.useCallback(function () {
+  var load = React$1.useCallback(function () {
     var __payload = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
     updatePayload(__payload);
     updateData();
     setShouldFetch(true);
   }, []);
-  React.useEffect(function () {
+  React$1.useEffect(function () {
     if (shouldFetch) {
       iFetch(_objectSpread2$1(_objectSpread2$1({}, payload), {}, {
         params: params,
@@ -949,7 +966,7 @@ var useApi = function useApi() {
       setShouldFetch(false);
     }
   }, [onError, onSuccess, params, shouldFetch, token]);
-  React.useEffect(function () {
+  React$1.useEffect(function () {
     return function () {
       controller.abort();
     };
@@ -1074,7 +1091,7 @@ var Show = function Show(props) {
   var condition = props.condition,
       willUnmount = props.willUnmount,
       children = props.children;
-  React.useEffect(function () {
+  React$1.useEffect(function () {
     return willUnmount;
   }, [willUnmount]);
   if (condition) return children;
@@ -1082,7 +1099,7 @@ var Show = function Show(props) {
 };
 
 var AttachmentImage = function AttachmentImage(props) {
-  var _useState = React.useState(false),
+  var _useState = React$1.useState(false),
       _useState2 = _slicedToArray(_useState, 2),
       loaded = _useState2[0],
       setLoaded = _useState2[1];
@@ -1135,6 +1152,100 @@ var AttachmentImage = function AttachmentImage(props) {
       padding: 4
     }
   }, placeholder))));
+};
+
+var Button = function Button(props) {
+  var style = props.style,
+      type = props.type,
+      icon = props.icon,
+      title = props.title,
+      _className = props.className,
+      _iconSize = props.iconSize,
+      _neumorphic = props.neumorphic,
+      _onClick = props.onClick,
+      _htmlType = props.htmlType,
+      soft = props.soft,
+      selected = props.selected,
+      children = props.children;
+  var iconSize = _iconSize || 32;
+  var htmlType = takeIf(!!_htmlType, _htmlType, 'button');
+  var iconButton = !children && !title;
+  var neumorphic = takeUndefinedAsTrue(_neumorphic);
+  var className = "no-select ";
+  className += takeIf(neumorphic && isNullOrUndefined(selected), "neumorphic-button".concat(takeIf(soft, '-soft', '')), "neumorphic-clickable");
+  className += takeIf(selected, " neumorphic-inset", "");
+  var onClick = React$1.useCallback(function (e) {
+    if (htmlType !== 'submit') e.preventDefault();
+    if (_onClick) _onClick(e);
+  }, [htmlType, _onClick]);
+
+  if (!!type) {
+    className += " button-".concat(type, "-neumorphic");
+  }
+
+  if (_className) className += " ".concat(_className || "");
+  return /*#__PURE__*/React__default['default'].createElement("button", {
+    style: _objectSpread2({
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: takeIf(iconButton, iconSize),
+      height: takeIf(iconButton, iconSize),
+      borderRadius: takeIf(iconButton, "50%"),
+      boxShadow: takeIf(selected === undefined, '')
+    }, style || {}),
+    type: htmlType,
+    onClick: onClick,
+    className: className
+  }, /*#__PURE__*/React__default['default'].createElement(Show, {
+    condition: icon
+  }, /*#__PURE__*/React__default['default'].createElement("div", {
+    style: _objectSpread2(_objectSpread2({
+      marginRight: takeIf(!iconButton, 8)
+    }, appStyles.center), {}, {
+      fontSize: takeIf(iconButton, 18, 12),
+      width: takeIf(iconButton, "100%", 12),
+      height: takeIf(iconButton, "100%", 12)
+    })
+  }, icon)), /*#__PURE__*/React__default['default'].createElement("div", {
+    style: {
+      fontSize: 14
+    }
+  }, children || title));
+};
+
+var ColorPicker = function ColorPicker(props) {
+  var _value = props.value,
+      label = props.label,
+      _onChange = props.onChange,
+      children = props.children;
+  var onChange = React$1.useCallback(function (_ref) {
+    var hex = _ref.hex;
+
+    _onChange(hex);
+  }, [_onChange]);
+  return /*#__PURE__*/React__default['default'].createElement(antd.Popover, {
+    content: /*#__PURE__*/React__default['default'].createElement(reactColor.SwatchesPicker, {
+      onChange: onChange
+    }),
+    title: "Renk"
+  }, /*#__PURE__*/React__default['default'].createElement(Show, {
+    condition: children
+  }, children), /*#__PURE__*/React__default['default'].createElement(Show, {
+    condition: !children
+  }, /*#__PURE__*/React__default['default'].createElement("div", {
+    className: "neumorphic-input"
+  }, /*#__PURE__*/React__default['default'].createElement("p", {
+    style: {
+      fontWeight: 500
+    }
+  }, label), /*#__PURE__*/React__default['default'].createElement("div", {
+    className: "neumorphic-outset-soft",
+    style: {
+      backgroundColor: _value,
+      height: 32,
+      width: '100%'
+    }
+  }))));
 };
 
 var DateDescription = function DateDescription(props) {
@@ -1247,6 +1358,40 @@ var DescriptionOverflowImages = function DescriptionOverflowImages(props) {
   }, title));
 };
 
+var DescriptionRow = function DescriptionRow(props) {
+  var title = props.title,
+      description = props.description,
+      descriptionRenderer = props.descriptionRenderer,
+      _titleSpan = props.titleSpan,
+      style = props.style;
+  var titleSpan = _titleSpan || 4;
+  return /*#__PURE__*/React__default['default'].createElement(antd.Row, {
+    style: _objectSpread2(_objectSpread2({}, style || {}), {}, {
+      alignItems: 'center'
+    })
+  }, /*#__PURE__*/React__default['default'].createElement(antd.Col, {
+    span: titleSpan,
+    style: {
+      lineHeight: 0
+    }
+  }, /*#__PURE__*/React__default['default'].createElement("span", {
+    style: {
+      margin: 0,
+      fontWeight: 'bold',
+      color: 'black',
+      lineHeight: 0
+    }
+  }, title)), /*#__PURE__*/React__default['default'].createElement(antd.Col, {
+    span: 24 - titleSpan
+  }, descriptionRenderer ? descriptionRenderer : /*#__PURE__*/React__default['default'].createElement("span", {
+    style: {
+      margin: 0,
+      color: 'black',
+      lineHeight: 0
+    }
+  }, description)));
+};
+
 var EmptyResult = function EmptyResult(props) {
   var icon = props.icon,
       title = props.title,
@@ -1296,6 +1441,132 @@ var Header = function Header(props) {
       margin: 0
     }, appStyles.cardTitle)
   }, title)), extra);
+};
+
+var IncDecField = function IncDecField(props) {
+  var value = props.value,
+      onChange = props.onChange,
+      _size = props.size,
+      style = props.style,
+      minusDisabled = props.minusDisabled,
+      plusDisabled = props.plusDisabled,
+      children = props.children;
+  var size = _size || 32;
+  return /*#__PURE__*/React__default['default'].createElement("div", {
+    style: _objectSpread2(_objectSpread2(_objectSpread2({
+      marginVertical: 16
+    }, appStyles.row), appStyles.spreadHorizontally), style || {})
+  }, /*#__PURE__*/React__default['default'].createElement(Button, {
+    icon: /*#__PURE__*/React__default['default'].createElement(icons.MinusOutlined, {
+      style: {
+        fontSize: size / 2
+      }
+    }),
+    disabled: minusDisabled,
+    shape: "circle",
+    type: "primary",
+    style: {
+      borderRadius: 10
+    },
+    onClick: function onClick() {
+      return onChange(value - 1);
+    }
+  }), children, /*#__PURE__*/React__default['default'].createElement(Button, {
+    icon: /*#__PURE__*/React__default['default'].createElement(icons.PlusOutlined, {
+      style: {
+        fontSize: size / 2
+      }
+    }),
+    disabled: plusDisabled,
+    shape: "circle",
+    type: "primary",
+    style: {
+      borderRadius: 10
+    },
+    onClick: function onClick() {
+      return onChange(value + 1);
+    }
+  }));
+};
+
+var InfoRow = function InfoRow(props) {
+  var label = props.label,
+      content = props.content,
+      children = props.children;
+  return /*#__PURE__*/React__default['default'].createElement(antd.Row, {
+    style: {
+      margin: '16px 0'
+    }
+  }, /*#__PURE__*/React__default['default'].createElement(antd.Col, {
+    span: 6
+  }, /*#__PURE__*/React__default['default'].createElement("div", {
+    style: {
+      fontWeight: '500'
+    }
+  }, label)), /*#__PURE__*/React__default['default'].createElement(antd.Col, {
+    span: 18
+  }, /*#__PURE__*/React__default['default'].createElement("div", {
+    style: {
+      color: '#aaa'
+    }
+  }, content || children)));
+};
+
+var InfoRowForm = function InfoRowForm(props) {
+  var _useState = React$1.useState(undefined),
+      _useState2 = _slicedToArray(_useState, 2),
+      RenderComponent = _useState2[0],
+      setRenderComponent = _useState2[1];
+
+  var label = props.label,
+      name = props.name,
+      _onChange = props.onChange,
+      value = props.value,
+      component = props.component,
+      rest = _objectWithoutProperties(props, ["label", "name", "onChange", "value", "component"]);
+
+  React$1.useEffect(function () {
+    setRenderComponent( /*#__PURE__*/React__default['default'].createElement(component || antd.Input, {}));
+  }, [component]);
+  return /*#__PURE__*/React__default['default'].createElement(antd.Row, {
+    style: {
+      margin: '16px 0'
+    }
+  }, /*#__PURE__*/React__default['default'].createElement(antd.Col, {
+    span: 6
+  }, /*#__PURE__*/React__default['default'].createElement("div", {
+    style: {
+      fontWeight: '500'
+    }
+  }, label)), /*#__PURE__*/React__default['default'].createElement(antd.Col, {
+    span: 18
+  }, RenderComponent ? /*#__PURE__*/React__default['default'].createElement(RenderComponent.type, _extends({
+    value: value,
+    onChange: function onChange() {
+      for (var _len = arguments.length, a = new Array(_len), _key = 0; _key < _len; _key++) {
+        a[_key] = arguments[_key];
+      }
+
+      return _onChange.apply(void 0, [name].concat(a));
+    }
+  }, rest || {})) : null));
+};
+
+var List = function List(props) {
+  var _items = props.items,
+      loading = props.loading,
+      renderer = props.renderer,
+      emptyRenderer = props.emptyRenderer,
+      loadingRenderer = props.loadingRenderer;
+  var items = _items || [];
+  if (loading) return loadingRenderer;
+  if (!items.length) return emptyRenderer;
+  return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, items.map(function (item, index) {
+    return renderer({
+      item: item,
+      index: index
+    });
+  }));
 };
 
 var ListItem = function ListItem(props) {
@@ -1375,6 +1646,24 @@ var Loading = function Loading(props) {
   }, /*#__PURE__*/React__default['default'].createElement(antd.Spin, props));
 };
 
+var Neumorphic = function Neumorphic(props) {
+  var style = props.style,
+      children = props.children;
+  return /*#__PURE__*/React.createElement("div", {
+    className: "neumorphic-outset",
+    style: _objectSpread2(_objectSpread2({}, style || {}), {}, {
+      borderRadius: 10
+    })
+  }, children);
+};
+
+var PageTitle = function PageTitle(props) {
+  var title = props.title;
+  return /*#__PURE__*/React__default['default'].createElement("h1", {
+    className: "neumorphic-title"
+  }, title);
+};
+
 var PostCard = function PostCard(props) {
   var style = props.style,
       avatar = props.avatar,
@@ -1441,8 +1730,69 @@ var QuantityBadge = function QuantityBadge(props) {
   }, quantity));
 };
 
+var QuantityField = function QuantityField(props) {
+  var value = props.value,
+      onChange = props.onChange,
+      _size = props.size,
+      style = props.style,
+      minusDisabled = props.minusDisabled,
+      plusDisabled = props.plusDisabled,
+      total = props.total;
+  var size = _size || 32;
+  return /*#__PURE__*/React__default['default'].createElement("div", {
+    style: _objectSpread2(_objectSpread2({
+      marginVertical: 16
+    }, appStyles.row), style || {})
+  }, /*#__PURE__*/React__default['default'].createElement(Button, {
+    icon: /*#__PURE__*/React__default['default'].createElement(icons.MinusOutlined, {
+      color: "white"
+    }),
+    disabled: minusDisabled,
+    type: "primary",
+    style: {
+      borderTopLeftRadius: 4,
+      borderBottomLeftRadius: 4,
+      borderTopRightRadius: 0,
+      borderBottomRightRadius: 0
+    },
+    onClick: function onClick() {
+      return onChange(value - 1);
+    }
+  }), /*#__PURE__*/React__default['default'].createElement("div", {
+    style: _objectSpread2(_objectSpread2({}, appStyles.center), {}, {
+      width: size,
+      height: size,
+      border: '1px solid #aaa'
+    })
+  }, /*#__PURE__*/React__default['default'].createElement("div", null, value)), /*#__PURE__*/React__default['default'].createElement(Show, {
+    condition: total !== undefined
+  }, /*#__PURE__*/React__default['default'].createElement("div", {
+    style: _objectSpread2(_objectSpread2({}, appStyles.center), {}, {
+      backgroundColor: '#eee',
+      width: size,
+      height: size,
+      border: '1px solid #aaa'
+    })
+  }, /*#__PURE__*/React__default['default'].createElement("div", null, total))), /*#__PURE__*/React__default['default'].createElement(Button, {
+    icon: /*#__PURE__*/React__default['default'].createElement(icons.PlusOutlined, {
+      color: "white"
+    }),
+    disabled: plusDisabled,
+    type: "primary",
+    style: {
+      borderTopLeftRadius: 0,
+      borderBottomLeftRadius: 0,
+      borderTopRightRadius: 4,
+      borderBottomRightRadius: 4
+    },
+    onClick: function onClick() {
+      return onChange(value + 1);
+    }
+  }));
+};
+
 var Option = antd.Select.Option;
-var QueryAutoComplete = /*#__PURE__*/React.forwardRef(function (props, ref) {
+var QueryAutoComplete = /*#__PURE__*/React$1.forwardRef(function (props, ref) {
   var value = props.value,
       onChange = props.onChange,
       getOptions = props.getOptions,
@@ -1454,12 +1804,12 @@ var QueryAutoComplete = /*#__PURE__*/React.forwardRef(function (props, ref) {
 
   var minLength = _minLength === undefined ? 3 : _minLength;
 
-  var _useState = React.useState(value),
+  var _useState = React$1.useState(value),
       _useState2 = _slicedToArray(_useState, 2),
       search = _useState2[0],
       setSearch = _useState2[1];
 
-  var _useState3 = React.useState([]),
+  var _useState3 = React$1.useState([]),
       _useState4 = _slicedToArray(_useState3, 2),
       response = _useState4[0],
       setResponse = _useState4[1];
@@ -1477,12 +1827,12 @@ var QueryAutoComplete = /*#__PURE__*/React.forwardRef(function (props, ref) {
 
   var searchStringLength = (search || "").length;
   var shouldSearch = searchStringLength >= minLength;
-  React.useEffect(function () {
+  React$1.useEffect(function () {
     if (!search) {
       setSearch(value);
     }
   }, [value, search, setSearch]);
-  React.useEffect(function () {
+  React$1.useEffect(function () {
     if (shouldSearch) {
       var apiOptions = getOptions(search);
 
@@ -1544,7 +1894,7 @@ var QueryAutoComplete = /*#__PURE__*/React.forwardRef(function (props, ref) {
 });
 
 var Option$1 = antd.Select.Option;
-var SelectItemsRenderer = /*#__PURE__*/React.forwardRef(function (props, ref) {
+var SelectItemsRenderer = /*#__PURE__*/React$1.forwardRef(function (props, ref) {
   var items = props.items,
       placeHolder = props.placeHolder,
       value = props.value,
@@ -1560,7 +1910,7 @@ var SelectItemsRenderer = /*#__PURE__*/React.forwardRef(function (props, ref) {
 
   var valueField = _valueField || 'id';
   var descriptionField = _descriptionField || 'name';
-  React.useEffect(function () {
+  React$1.useEffect(function () {
     if (defaultSelectFirstValue) {
       if (items.length && !value) {
         onChange(items[0][valueField]);
@@ -1604,8 +1954,8 @@ var SelectItemsRenderer = /*#__PURE__*/React.forwardRef(function (props, ref) {
   }));
 });
 
-var QuerySelect = /*#__PURE__*/React.forwardRef(function (props, ref) {
-  var _useState = React.useState(false),
+var QuerySelect = /*#__PURE__*/React$1.forwardRef(function (props, ref) {
+  var _useState = React$1.useState(false),
       _useState2 = _slicedToArray(_useState, 2),
       items = _useState2[0],
       setItems = _useState2[1];
@@ -1619,14 +1969,14 @@ var QuerySelect = /*#__PURE__*/React.forwardRef(function (props, ref) {
       load = _useApi.load,
       response = _useApi.response;
 
-  React.useEffect(function () {
+  React$1.useEffect(function () {
     if (url) {
       load(_objectSpread2({
         endpoint: url
       }, options));
     }
   }, [url, load, options]);
-  React.useEffect(function () {
+  React$1.useEffect(function () {
     if (fetched && response) {
       setItems(response.data);
     }
@@ -1644,13 +1994,13 @@ var Rate = function Rate(props) {
       _emptyColor = props.emptyColor,
       style = props.style;
 
-  var _useState = React.useState([]),
+  var _useState = React$1.useState([]),
       _useState2 = _slicedToArray(_useState, 2),
       stars = _useState2[0],
       setStars = _useState2[1];
 
   var size = _size || 24;
-  React.useEffect(function () {
+  React$1.useEffect(function () {
     var _stars = Array(total || 5).fill(0).map(function (i, index) {
       return index < value ? 1 : 0;
     });
@@ -1759,65 +2109,6 @@ var StarCount = function StarCount(props) {
   }));
 };
 
-var Button = function Button(props) {
-  var style = props.style,
-      type = props.type,
-      icon = props.icon,
-      title = props.title,
-      _className = props.className,
-      _iconSize = props.iconSize,
-      _neumorphic = props.neumorphic,
-      _onClick = props.onClick,
-      _htmlType = props.htmlType,
-      soft = props.soft,
-      selected = props.selected,
-      children = props.children;
-  var iconSize = _iconSize || 32;
-  var htmlType = takeIf(!!_htmlType, _htmlType, 'button');
-  var iconButton = !children && !title;
-  var neumorphic = takeUndefinedAsTrue(_neumorphic);
-  var className = "no-select ";
-  className += takeIf(neumorphic && isNullOrUndefined(selected), "neumorphic-button".concat(takeIf(soft, '-soft', '')), "neumorphic-clickable");
-  className += takeIf(selected, " neumorphic-inset", "");
-  var onClick = React.useCallback(function (e) {
-    if (htmlType !== 'submit') e.preventDefault();
-    if (_onClick) _onClick(e);
-  }, [htmlType, _onClick]);
-
-  if (!!type) {
-    className += " button-".concat(type, "-neumorphic");
-  }
-
-  if (_className) className += " ".concat(_className || "");
-  return /*#__PURE__*/React__default['default'].createElement("button", {
-    style: _objectSpread2({
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: takeIf(iconButton, iconSize),
-      height: takeIf(iconButton, iconSize),
-      borderRadius: takeIf(iconButton, "50%"),
-      boxShadow: takeIf(selected === undefined, '')
-    }, style || {}),
-    type: htmlType,
-    onClick: onClick,
-    className: className
-  }, /*#__PURE__*/React__default['default'].createElement(Show, {
-    condition: icon
-  }, /*#__PURE__*/React__default['default'].createElement("div", {
-    style: _objectSpread2(_objectSpread2({
-      marginRight: takeIf(!iconButton, 8)
-    }, appStyles.center), {}, {
-      fontSize: takeIf(iconButton, 18, 12),
-      width: takeIf(iconButton, "100%", 12),
-      height: takeIf(iconButton, "100%", 12)
-    })
-  }, icon)), /*#__PURE__*/React__default['default'].createElement("div", {
-    style: {
-      fontSize: 14
-    }
-  }, children || title));
-};
-
 var Tag = function Tag(props) {
   var _color = props.color,
       className = props.className,
@@ -1872,17 +2163,170 @@ var Tag = function Tag(props) {
   })));
 };
 
+var Textfield = function Textfield(props) {
+  var className = props.className,
+      label = props.label,
+      prefix = props.prefix,
+      suffix = props.suffix,
+      value = props.value,
+      onChange = props.onChange,
+      onBlur = props.onBlur,
+      onPressEnter = props.onPressEnter,
+      rest = _objectWithoutProperties(props, ["className", "label", "prefix", "suffix", "value", "onChange", "onBlur", "onPressEnter"]);
+
+  var input = React$1.useRef(null);
+  var focusInput = React$1.useCallback(function () {
+    if (input.current) input.current.focus();
+  }, [input]);
+  var onKeyPress = React$1.useCallback(function (e) {
+    if (["enter", "Enter"].indexOf(e.key) > -1) if (onPressEnter) onPressEnter(e);
+  }, [onPressEnter]);
+  return /*#__PURE__*/React__default['default'].createElement("div", {
+    className: "neumorphic-input",
+    style: {
+      width: '100%'
+    }
+  }, /*#__PURE__*/React__default['default'].createElement(Show, {
+    condition: label
+  }, /*#__PURE__*/React__default['default'].createElement("p", {
+    className: "no-select",
+    style: {
+      fontWeight: 500
+    },
+    onClick: focusInput
+  }, label)), /*#__PURE__*/React__default['default'].createElement("div", {
+    style: _objectSpread2(_objectSpread2({}, appStyles.row), {}, {
+      alignItems: 'center'
+    })
+  }, prefix, /*#__PURE__*/React__default['default'].createElement("input", _extends({
+    className: "".concat(className || "", " input"),
+    style: {
+      width: '100%'
+    },
+    value: value || "",
+    ref: input,
+    onChange: onChange,
+    onBlur: onBlur,
+    onKeyPress: onKeyPress
+  }, rest)), suffix));
+};
+
+var TextListField = function TextListField(props) {
+  var _value = props.value,
+      _onChange = props.onChange,
+      listContainerStyle = props.listContainerStyle,
+      _descriptionKey = props.descriptionKey,
+      valuesRenderer = props.valuesRenderer,
+      label = props.label,
+      valueTransformer = props.valueTransformer;
+  var descriptionKey = React$1.useMemo(function () {
+    return _descriptionKey || "name";
+  }, [_descriptionKey]);
+
+  var _useState = React$1.useState({}),
+      _useState2 = _slicedToArray(_useState, 2),
+      value = _useState2[0],
+      setValue = _useState2[1];
+
+  var values = React$1.useMemo(function () {
+    return _value || [];
+  }, [_value]);
+  var onSave = React$1.useCallback(function (e) {
+    if (e) e.preventDefault();
+    var newValue = valueTransformer ? valueTransformer(value) : value;
+    if (!newValue[descriptionKey]) return;
+
+    if (newValue.index !== undefined) {
+      var index = newValue.index;
+      delete newValue.index;
+      values[index] = newValue;
+
+      _onChange(_toConsumableArray(values));
+    } else {
+      _onChange([].concat(_toConsumableArray(values), [newValue]));
+    }
+
+    setValue({});
+  }, [value, valueTransformer, values, _onChange, descriptionKey]);
+  var onClear = React$1.useCallback(function (index) {
+    values.splice(index, 1);
+
+    _onChange(_toConsumableArray(values));
+  }, [values, _onChange]);
+  var commitChange = React$1.useCallback(function (index, _newValue) {
+    var newValue = valueTransformer ? valueTransformer(_newValue) : _newValue;
+    values[index] = newValue;
+
+    _onChange(_toConsumableArray(values));
+  }, [values, valueTransformer, _onChange]);
+  return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, /*#__PURE__*/React__default['default'].createElement("div", {
+    style: _objectSpread2(_objectSpread2({}, appStyles.grid), listContainerStyle || {})
+  }, values.map(function (item, index) {
+    return valuesRenderer({
+      item: item,
+      index: index,
+      onClear: onClear,
+      setValue: setValue,
+      onSave: onSave,
+      onChange: commitChange
+    });
+  })), /*#__PURE__*/React__default['default'].createElement("div", {
+    style: _objectSpread2(_objectSpread2({}, appStyles.row), {}, {
+      marginTop: 8
+    })
+  }, /*#__PURE__*/React__default['default'].createElement(Textfield, {
+    value: value[descriptionKey],
+    label: label,
+    onChange: function onChange(e) {
+      return setValue(_objectSpread2(_objectSpread2({}, value), {}, _defineProperty({}, descriptionKey, e.target.value)));
+    },
+    onPressEnter: onSave,
+    onBlur: onSave,
+    suffix: /*#__PURE__*/React__default['default'].createElement(Button, {
+      icon: /*#__PURE__*/React__default['default'].createElement(icons.CheckOutlined, null),
+      type: "primary",
+      disabled: !value[descriptionKey],
+      onClick: onSave
+    })
+  })));
+};
+
+var ThreeDot = function ThreeDot(props) {
+  var children = props.children;
+  return /*#__PURE__*/React__default['default'].createElement("div", {
+    style: {
+      display: 'inline-block',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap',
+      width: '100%'
+    }
+  }, /*#__PURE__*/React__default['default'].createElement(antd.Tooltip, {
+    title: children
+  }, children));
+};
+
 exports.AttachmentImage = AttachmentImage;
+exports.Button = Button;
+exports.ColorPicker = ColorPicker;
 exports.DateDescription = DateDescription;
 exports.DescriptionIcon = DescriptionIcon;
 exports.DescriptionOverflowImages = DescriptionOverflowImages;
+exports.DescriptionRow = DescriptionRow;
 exports.EmptyResult = EmptyResult;
 exports.Header = Header;
+exports.IncDecField = IncDecField;
+exports.InfoRow = InfoRow;
+exports.InfoRowForm = InfoRowForm;
+exports.List = List;
 exports.ListItem = ListItem;
 exports.Loading = Loading;
+exports.Neumorphic = Neumorphic;
 exports.OverflowImages = OverflowImages;
+exports.PageTitle = PageTitle;
 exports.PostCard = PostCard;
 exports.QuantityBadge = QuantityBadge;
+exports.QuantityField = QuantityField;
 exports.QueryAutoComplete = QueryAutoComplete;
 exports.QuerySelect = QuerySelect;
 exports.Rate = Rate;
@@ -1892,3 +2336,6 @@ exports.SelectItemsRenderer = SelectItemsRenderer;
 exports.Shimmer = Shimmer;
 exports.StarCount = StarCount;
 exports.Tag = Tag;
+exports.TextListField = TextListField;
+exports.Textfield = Textfield;
+exports.ThreeDot = ThreeDot;

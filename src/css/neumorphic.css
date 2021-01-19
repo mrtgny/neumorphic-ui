@@ -1,0 +1,164 @@
+:root {
+    --colorMain: #aaa;
+    --neumorphic-bottom-right: 4px 4px 5px 0 rgba(0, 0, 0, 0.5);
+    --neumorphic-top-left: -4px -4px 5px 0 rgba(255, 255, 255, 1);
+    --neumorphic-outset: var(--neumorphic-bottom-right), var(--neumorphic-top-left);
+
+    --neumorphic-bottom-right-air: 6px 6px 8px 0 rgba(0, 0, 0, 0.5);
+    --neumorphic-top-left-air: -6px -6px 8px 0 rgba(255, 255, 255, 1);
+    --neumorphic-air: var(--neumorphic-bottom-right-air), var(--neumorphic-top-left-air);
+
+    --neumorphic-bottom-right-soft: 2px 2px 4px 0 rgba(0, 0, 0, 0.5);
+    --neumorphic-top-left-soft: -2px -2px 4px 0 rgba(255, 255, 255, 1);
+    --neumorphic-outset-soft: var(--neumorphic-bottom-right-soft), var(--neumorphic-top-left-soft);
+
+    --neumorphic-inset-bottom-right: inset 4px 4px 10px 0 rgba(0, 0, 0, 0.2);
+    --neumorphic-inset-top-left: inset -4px -4px 10px 0 rgba(255, 255, 255, 0.5);
+    --neumorphic-inset: var(--neumorphic-inset-bottom-right), var(--neumorphic-inset-top-left);
+
+    --neumorphic-inset-bottom-right-soft: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2);
+    --neumorphic-inset-top-left-soft: inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
+    --neumorphic-inset-soft: var(--neumorphic-inset-bottom-right-soft), var(--neumorphic-inset-top-left-soft);
+
+}
+
+.neumorphic-air{
+
+}
+
+.neumorphic-inset {
+    transition: 0.4s;
+    box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent, var(--neumorphic-inset) !important;
+}
+
+.neumorphic-inset-soft {
+    transition: 0.4s;
+    background: linear-gradient(-45deg, rgba(0, 0, 0, 0.22), rgba(255, 255, 255, 0.25));
+    background-color: red !important;
+    box-shadow: 0 0 0 0 transparent, var(--neumorphic-inset-soft);
+}
+
+.neumorphic-outset {
+    transition: 0.4s;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: var(--neumorphic-outset) !important;
+}
+
+.neumorphic-outset-soft {
+    transition: 0.4s;
+    border-radius: 10px;
+    box-shadow: var(--neumorphic-outset-soft);
+}
+
+.neumorphic-clickable {
+    transition: 0.4s;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.neumorphic-clickable:hover {
+    transition: 0.4s;
+    box-shadow: var(--neumorphic-air), inset 0 0 0 0 transparent, inset 0 0 0 0 transparent !important;
+    cursor: pointer;
+}
+
+.neumorphic-clickable:active {
+    transition: 0.4s;
+    box-shadow: var(--neumorphic-outset), var(--neumorphic-inset) !important;
+    cursor: pointer;
+}
+
+
+input {
+    transition: 0.4s;
+    border: none !important;
+    background-color: transparent !important;
+    outline: none !important;
+}
+
+input:focus {
+    transition: 0.4s;
+    outline: none !important;
+    border: none !important;
+}
+
+.neumorphic-input {
+    transition: 0.4s;
+    border-radius: 10px;
+    padding: 8px 16px;
+    box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent, var(--neumorphic-inset);
+}
+
+.neumorphic-input:focus-within {
+    transition: 0.4s;
+    box-shadow: var(--neumorphic-air), var(--neumorphic-inset);
+}
+
+.neumorphic-title {
+    color: #eee;
+    font-size: 4em;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5), -4px -4px 5px rgba(255, 255, 255, 1);
+}
+
+button {
+    transition: 0.4s;
+    border: none;
+    background-color: transparent;
+    white-space: nowrap;
+    padding: 4px 8px;
+    outline: none;
+    display: inline-flex;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.neumorphic-button {
+    background-color: transparent;
+    transition: 0.4s;
+    padding: 4px 16px;
+    background: linear-gradient(-45deg, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0));
+    box-shadow: var(--neumorphic-outset);
+}
+
+.neumorphic-button-soft {
+    background-color: transparent;
+    transition: 0.4s;
+    padding: 4px 16px;
+    background: linear-gradient(-45deg, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0));
+    box-shadow: var(--neumorphic-outset-soft);
+}
+
+.neumorphic-button:hover {
+    transition: 0.4s;
+    box-shadow: var(--neumorphic-air);
+}
+
+.neumorphic-outset-inset {
+    transition: 0.4s;
+    box-shadow: var(--neumorphic-outset), var(--neumorphic-inset) !important;
+}
+
+.neumorphic-button:active {
+    transition: 0.4s;
+    box-shadow: var(--neumorphic-outset), var(--neumorphic-inset) !important;
+}
+
+.button-danger-neumorphic {
+    transition: 0.4s;
+    color: white;
+    box-shadow: var(--neumorphic-outset);
+    background-color: red;
+}
+
+.button-primary-neumorphic {
+    transition: 0.4s;
+    box-shadow: var(--neumorphic-outset);
+    background-color: #1890ff;
+    color: white;
+}
+
+.button-link-neumorphic {
+    transition: 0.4s;
+    color: #1890ff;
+    box-shadow: var(--neumorphic-outset);
+}
