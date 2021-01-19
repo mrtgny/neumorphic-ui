@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var React$1 = require('react');
+var React = require('react');
 var moment = require('moment');
 require('moment/locale/tr');
 require('react-router-dom');
@@ -13,7 +13,7 @@ var icons = require('@ant-design/icons');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
-var React__default = /*#__PURE__*/_interopDefaultLegacy(React$1);
+var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 var moment__default = /*#__PURE__*/_interopDefaultLegacy(moment);
 
 function _defineProperty(obj, key, value) {
@@ -630,10 +630,10 @@ var initialState = {
   notifications: [],
   modals: {}
 };
-var StoreContext = /*#__PURE__*/React$1.createContext(initialState);
+var StoreContext = /*#__PURE__*/React.createContext(initialState);
 
 var useLocalStorage = function useLocalStorage(key, defaultValue) {
-  var getItem = React$1.useCallback(function (_defaultValue) {
+  var getItem = React.useCallback(function (_defaultValue) {
     try {
       var value = JSON.parse(window.localStorage.getItem(key));
       return value || _defaultValue || defaultValue;
@@ -641,7 +641,7 @@ var useLocalStorage = function useLocalStorage(key, defaultValue) {
       return defaultValue;
     }
   }, [defaultValue, key]);
-  var setItem = React$1.useCallback(function (_value) {
+  var setItem = React.useCallback(function (_value) {
     try {
       var value = JSON.stringify(_value);
       window.localStorage.setItem(key, value);
@@ -649,7 +649,7 @@ var useLocalStorage = function useLocalStorage(key, defaultValue) {
       window.localStorage.setItem(key, defaultValue || '{}');
     }
   }, [defaultValue, key]);
-  var removeItem = React$1.useCallback(function () {
+  var removeItem = React.useCallback(function () {
     window.localStorage.removeItem(key);
   }, [key]);
   return {
@@ -660,7 +660,7 @@ var useLocalStorage = function useLocalStorage(key, defaultValue) {
 };
 
 var useAuth = function useAuth() {
-  var _useContext = React$1.useContext(StoreContext),
+  var _useContext = React.useContext(StoreContext),
       _useContext2 = _slicedToArray$1(_useContext, 2),
       state = _useContext2[0],
       dispatch = _useContext2[1];
@@ -671,7 +671,7 @@ var useAuth = function useAuth() {
   var _ref = state || {},
       auth = _ref.auth;
 
-  var logout = React$1.useCallback(function () {
+  var logout = React.useCallback(function () {
     setItem("");
     dispatch({
       type: actions.LOGOUT
@@ -694,7 +694,7 @@ var useAuth = function useAuth() {
       }
     }
   }, [dispatch, setItem]);
-  var setToken = React$1.useCallback(function (token) {
+  var setToken = React.useCallback(function (token) {
     if (token) setItem(token);
     dispatch({
       type: actions.SET_TOKEN,
@@ -705,7 +705,7 @@ var useAuth = function useAuth() {
       }
     });
   }, [dispatch, setItem]);
-  var update = React$1.useCallback(function (data) {
+  var update = React.useCallback(function (data) {
     dispatch({
       type: actions.UPDATE_AUTH,
       payload: {
@@ -713,7 +713,7 @@ var useAuth = function useAuth() {
       }
     });
   }, [dispatch]);
-  var login = React$1.useCallback(function (data) {
+  var login = React.useCallback(function (data) {
     setToken(data.token);
     delete data.token;
     dispatch({
@@ -734,18 +734,18 @@ var useAuth = function useAuth() {
 };
 
 var useLoading = function useLoading() {
-  var _useContext = React$1.useContext(StoreContext),
+  var _useContext = React.useContext(StoreContext),
       _useContext2 = _slicedToArray$1(_useContext, 2),
       state = _useContext2[0],
       dispatch = _useContext2[1];
 
   var loading = state.loading;
-  var increase = React$1.useCallback(function () {
+  var increase = React.useCallback(function () {
     dispatch({
       type: actions.INCREASE_LOADING_QUEUE
     });
   }, []);
-  var decrease = React$1.useCallback(function () {
+  var decrease = React.useCallback(function () {
     dispatch({
       type: actions.DECREASE_LOADING_QUEUE
     });
@@ -759,11 +759,11 @@ var useLoading = function useLoading() {
 };
 
 var useNotification = function useNotification() {
-  var _useContext = React$1.useContext(StoreContext),
+  var _useContext = React.useContext(StoreContext),
       _useContext2 = _slicedToArray$1(_useContext, 2),
       dispatch = _useContext2[1];
 
-  var pushNotification = React$1.useCallback(function (params) {
+  var pushNotification = React.useCallback(function (params) {
     var type = params.type,
         rest = _objectWithoutProperties$1(params, ["type"]);
 
@@ -776,17 +776,17 @@ var useNotification = function useNotification() {
       }
     });
   }, [dispatch]);
-  var pushSuccessNotification = React$1.useCallback(function (params) {
+  var pushSuccessNotification = React.useCallback(function (params) {
     pushNotification(_objectSpread2$1({
       type: 'success'
     }, params));
   }, [pushNotification]);
-  var pushErrorNotification = React$1.useCallback(function (params) {
+  var pushErrorNotification = React.useCallback(function (params) {
     pushNotification(_objectSpread2$1({
       type: 'error'
     }, params));
   }, [pushNotification]);
-  var pushInfoNotification = React$1.useCallback(function (params) {
+  var pushInfoNotification = React.useCallback(function (params) {
     pushNotification(_objectSpread2$1({
       type: 'info'
     }, params));
@@ -814,19 +814,19 @@ var useApi = function useApi() {
       token = _useAuth.token,
       logout = _useAuth.logout;
 
-  var _useState = React$1.useState(_payload),
+  var _useState = React.useState(_payload),
       _useState2 = _slicedToArray$1(_useState, 2),
       payload = _useState2[0],
       setPayload = _useState2[1];
 
-  var _useState3 = React$1.useState(false),
+  var _useState3 = React.useState(false),
       _useState4 = _slicedToArray$1(_useState3, 2),
       shouldFetch = _useState4[0],
       setShouldFetch = _useState4[1];
 
   var stringifyPayload = JSON.stringify(payload);
 
-  var _useState5 = React$1.useState({
+  var _useState5 = React.useState({
     firstTimeFetched: false,
     fetched: false,
     fetching: false,
@@ -844,7 +844,7 @@ var useApi = function useApi() {
       payloadOnSuccess = payload.onSuccess,
       payloadOnError = payload.onError,
       payloadPushNotification = payload.pushNotification;
-  var onSuccess = React$1.useCallback(function (response) {
+  var onSuccess = React.useCallback(function (response) {
     var pushNotification = takeUndefinedAsTrue(payloadPushNotification);
     if (payloadOnSuccess) payloadOnSuccess(response);
     decrease();
@@ -864,7 +864,7 @@ var useApi = function useApi() {
       });
     }
   }, [payloadPushNotification, payloadOnSuccess]);
-  var onError = React$1.useCallback(function (response) {
+  var onError = React.useCallback(function (response) {
     var responseJSON = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
     var pushNotification = takeUndefinedAsTrue(payloadPushNotification);
     var notificationObj = {};
@@ -917,11 +917,11 @@ var useApi = function useApi() {
     });
     if (payloadOnError) payloadOnError(responseJSON || response);
   }, [endpoint, payloadPushNotification, payloadOnError]);
-  React$1.useEffect(function () {
+  React.useEffect(function () {
     var initial = payload.initial;
     if (initial) load();
   }, [stringifyPayload]);
-  var updatePayload = React$1.useCallback(function (__payload) {
+  var updatePayload = React.useCallback(function (__payload) {
     setPayload(function (oldPayload) {
       var newPayload = _objectSpread2$1(_objectSpread2$1({}, oldPayload), __payload);
 
@@ -939,7 +939,7 @@ var useApi = function useApi() {
       return newPayload;
     });
   }, []);
-  var updateData = React$1.useCallback(function () {
+  var updateData = React.useCallback(function () {
     setData(function (oldData) {
       return _objectSpread2$1(_objectSpread2$1({}, oldData), {}, {
         fetching: true,
@@ -947,14 +947,14 @@ var useApi = function useApi() {
       });
     });
   }, []);
-  var load = React$1.useCallback(function () {
+  var load = React.useCallback(function () {
     var __payload = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
     updatePayload(__payload);
     updateData();
     setShouldFetch(true);
   }, []);
-  React$1.useEffect(function () {
+  React.useEffect(function () {
     if (shouldFetch) {
       iFetch(_objectSpread2$1(_objectSpread2$1({}, payload), {}, {
         params: params,
@@ -966,7 +966,7 @@ var useApi = function useApi() {
       setShouldFetch(false);
     }
   }, [onError, onSuccess, params, shouldFetch, token]);
-  React$1.useEffect(function () {
+  React.useEffect(function () {
     return function () {
       controller.abort();
     };
@@ -1091,7 +1091,7 @@ var Show = function Show(props) {
   var condition = props.condition,
       willUnmount = props.willUnmount,
       children = props.children;
-  React$1.useEffect(function () {
+  React.useEffect(function () {
     return willUnmount;
   }, [willUnmount]);
   if (condition) return children;
@@ -1099,7 +1099,7 @@ var Show = function Show(props) {
 };
 
 var AttachmentImage = function AttachmentImage(props) {
-  var _useState = React$1.useState(false),
+  var _useState = React.useState(false),
       _useState2 = _slicedToArray(_useState, 2),
       loaded = _useState2[0],
       setLoaded = _useState2[1];
@@ -1174,7 +1174,7 @@ var Button = function Button(props) {
   var className = "no-select ";
   className += takeIf(neumorphic && isNullOrUndefined(selected), "neumorphic-button".concat(takeIf(soft, '-soft', '')), "neumorphic-clickable");
   className += takeIf(selected, " neumorphic-inset", "");
-  var onClick = React$1.useCallback(function (e) {
+  var onClick = React.useCallback(function (e) {
     if (htmlType !== 'submit') e.preventDefault();
     if (_onClick) _onClick(e);
   }, [htmlType, _onClick]);
@@ -1218,7 +1218,7 @@ var ColorPicker = function ColorPicker(props) {
       label = props.label,
       _onChange = props.onChange,
       children = props.children;
-  var onChange = React$1.useCallback(function (_ref) {
+  var onChange = React.useCallback(function (_ref) {
     var hex = _ref.hex;
 
     _onChange(hex);
@@ -1513,7 +1513,7 @@ var InfoRow = function InfoRow(props) {
 };
 
 var InfoRowForm = function InfoRowForm(props) {
-  var _useState = React$1.useState(undefined),
+  var _useState = React.useState(undefined),
       _useState2 = _slicedToArray(_useState, 2),
       RenderComponent = _useState2[0],
       setRenderComponent = _useState2[1];
@@ -1525,7 +1525,7 @@ var InfoRowForm = function InfoRowForm(props) {
       component = props.component,
       rest = _objectWithoutProperties(props, ["label", "name", "onChange", "value", "component"]);
 
-  React$1.useEffect(function () {
+  React.useEffect(function () {
     setRenderComponent( /*#__PURE__*/React__default['default'].createElement(component || antd.Input, {}));
   }, [component]);
   return /*#__PURE__*/React__default['default'].createElement(antd.Row, {
@@ -1649,7 +1649,7 @@ var Loading = function Loading(props) {
 var Neumorphic = function Neumorphic(props) {
   var style = props.style,
       children = props.children;
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React__default['default'].createElement("div", {
     className: "neumorphic-outset",
     style: _objectSpread2(_objectSpread2({}, style || {}), {}, {
       borderRadius: 10
@@ -1792,7 +1792,7 @@ var QuantityField = function QuantityField(props) {
 };
 
 var Option = antd.Select.Option;
-var QueryAutoComplete = /*#__PURE__*/React$1.forwardRef(function (props, ref) {
+var QueryAutoComplete = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var value = props.value,
       onChange = props.onChange,
       getOptions = props.getOptions,
@@ -1804,12 +1804,12 @@ var QueryAutoComplete = /*#__PURE__*/React$1.forwardRef(function (props, ref) {
 
   var minLength = _minLength === undefined ? 3 : _minLength;
 
-  var _useState = React$1.useState(value),
+  var _useState = React.useState(value),
       _useState2 = _slicedToArray(_useState, 2),
       search = _useState2[0],
       setSearch = _useState2[1];
 
-  var _useState3 = React$1.useState([]),
+  var _useState3 = React.useState([]),
       _useState4 = _slicedToArray(_useState3, 2),
       response = _useState4[0],
       setResponse = _useState4[1];
@@ -1827,12 +1827,12 @@ var QueryAutoComplete = /*#__PURE__*/React$1.forwardRef(function (props, ref) {
 
   var searchStringLength = (search || "").length;
   var shouldSearch = searchStringLength >= minLength;
-  React$1.useEffect(function () {
+  React.useEffect(function () {
     if (!search) {
       setSearch(value);
     }
   }, [value, search, setSearch]);
-  React$1.useEffect(function () {
+  React.useEffect(function () {
     if (shouldSearch) {
       var apiOptions = getOptions(search);
 
@@ -1894,7 +1894,7 @@ var QueryAutoComplete = /*#__PURE__*/React$1.forwardRef(function (props, ref) {
 });
 
 var Option$1 = antd.Select.Option;
-var SelectItemsRenderer = /*#__PURE__*/React$1.forwardRef(function (props, ref) {
+var SelectItemsRenderer = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var items = props.items,
       placeHolder = props.placeHolder,
       value = props.value,
@@ -1910,7 +1910,7 @@ var SelectItemsRenderer = /*#__PURE__*/React$1.forwardRef(function (props, ref) 
 
   var valueField = _valueField || 'id';
   var descriptionField = _descriptionField || 'name';
-  React$1.useEffect(function () {
+  React.useEffect(function () {
     if (defaultSelectFirstValue) {
       if (items.length && !value) {
         onChange(items[0][valueField]);
@@ -1954,8 +1954,8 @@ var SelectItemsRenderer = /*#__PURE__*/React$1.forwardRef(function (props, ref) 
   }));
 });
 
-var QuerySelect = /*#__PURE__*/React$1.forwardRef(function (props, ref) {
-  var _useState = React$1.useState(false),
+var QuerySelect = /*#__PURE__*/React.forwardRef(function (props, ref) {
+  var _useState = React.useState(false),
       _useState2 = _slicedToArray(_useState, 2),
       items = _useState2[0],
       setItems = _useState2[1];
@@ -1969,14 +1969,14 @@ var QuerySelect = /*#__PURE__*/React$1.forwardRef(function (props, ref) {
       load = _useApi.load,
       response = _useApi.response;
 
-  React$1.useEffect(function () {
+  React.useEffect(function () {
     if (url) {
       load(_objectSpread2({
         endpoint: url
       }, options));
     }
   }, [url, load, options]);
-  React$1.useEffect(function () {
+  React.useEffect(function () {
     if (fetched && response) {
       setItems(response.data);
     }
@@ -1994,13 +1994,13 @@ var Rate = function Rate(props) {
       _emptyColor = props.emptyColor,
       style = props.style;
 
-  var _useState = React$1.useState([]),
+  var _useState = React.useState([]),
       _useState2 = _slicedToArray(_useState, 2),
       stars = _useState2[0],
       setStars = _useState2[1];
 
   var size = _size || 24;
-  React$1.useEffect(function () {
+  React.useEffect(function () {
     var _stars = Array(total || 5).fill(0).map(function (i, index) {
       return index < value ? 1 : 0;
     });
@@ -2174,11 +2174,11 @@ var Textfield = function Textfield(props) {
       onPressEnter = props.onPressEnter,
       rest = _objectWithoutProperties(props, ["className", "label", "prefix", "suffix", "value", "onChange", "onBlur", "onPressEnter"]);
 
-  var input = React$1.useRef(null);
-  var focusInput = React$1.useCallback(function () {
+  var input = React.useRef(null);
+  var focusInput = React.useCallback(function () {
     if (input.current) input.current.focus();
   }, [input]);
-  var onKeyPress = React$1.useCallback(function (e) {
+  var onKeyPress = React.useCallback(function (e) {
     if (["enter", "Enter"].indexOf(e.key) > -1) if (onPressEnter) onPressEnter(e);
   }, [onPressEnter]);
   return /*#__PURE__*/React__default['default'].createElement("div", {
@@ -2219,19 +2219,19 @@ var TextListField = function TextListField(props) {
       valuesRenderer = props.valuesRenderer,
       label = props.label,
       valueTransformer = props.valueTransformer;
-  var descriptionKey = React$1.useMemo(function () {
+  var descriptionKey = React.useMemo(function () {
     return _descriptionKey || "name";
   }, [_descriptionKey]);
 
-  var _useState = React$1.useState({}),
+  var _useState = React.useState({}),
       _useState2 = _slicedToArray(_useState, 2),
       value = _useState2[0],
       setValue = _useState2[1];
 
-  var values = React$1.useMemo(function () {
+  var values = React.useMemo(function () {
     return _value || [];
   }, [_value]);
-  var onSave = React$1.useCallback(function (e) {
+  var onSave = React.useCallback(function (e) {
     if (e) e.preventDefault();
     var newValue = valueTransformer ? valueTransformer(value) : value;
     if (!newValue[descriptionKey]) return;
@@ -2248,12 +2248,12 @@ var TextListField = function TextListField(props) {
 
     setValue({});
   }, [value, valueTransformer, values, _onChange, descriptionKey]);
-  var onClear = React$1.useCallback(function (index) {
+  var onClear = React.useCallback(function (index) {
     values.splice(index, 1);
 
     _onChange(_toConsumableArray(values));
   }, [values, _onChange]);
-  var commitChange = React$1.useCallback(function (index, _newValue) {
+  var commitChange = React.useCallback(function (index, _newValue) {
     var newValue = valueTransformer ? valueTransformer(_newValue) : _newValue;
     values[index] = newValue;
 

@@ -1,4 +1,4 @@
-import React$1, { useCallback, useState, useEffect, useContext, createContext, forwardRef, useRef, useMemo } from 'react';
+import React, { useCallback, useState, useEffect, useContext, createContext, forwardRef, useRef, useMemo } from 'react';
 import moment from 'moment';
 import 'moment/locale/tr';
 import 'react-router-dom';
@@ -1110,15 +1110,15 @@ var AttachmentImage = function AttachmentImage(props) {
   } : {};
   var placeholder = _placheholder || "P";
   var fontSize = isNaN(_size / 2) ? 24 : _size / 2;
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, size), appStyles.defaultShadow), appStyles.center), {}, {
       backgroundColor: "#eee",
       overflow: "hidden"
     }, style),
     className: "".concat(className || "")
-  }, /*#__PURE__*/React$1.createElement(Show, {
+  }, /*#__PURE__*/React.createElement(Show, {
     condition: id
-  }, /*#__PURE__*/React$1.createElement("img", _extends({
+  }, /*#__PURE__*/React.createElement("img", _extends({
     onLoad: function onLoad() {
       return setLoaded(true);
     },
@@ -1128,14 +1128,14 @@ var AttachmentImage = function AttachmentImage(props) {
       width: '100%',
       display: loaded ? undefined : 'none'
     })
-  }, rest))), /*#__PURE__*/React$1.createElement(Show, {
+  }, rest))), /*#__PURE__*/React.createElement(Show, {
     condition: !loaded && !hidePlaceholder
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2({
       width: '100%',
       height: '100%'
     }, appStyles.center)
-  }, /*#__PURE__*/React$1.createElement("p", {
+  }, /*#__PURE__*/React.createElement("p", {
     style: {
       margin: 0,
       fontSize: fontSize,
@@ -1175,7 +1175,7 @@ var Button = function Button(props) {
   }
 
   if (_className) className += " ".concat(_className || "");
-  return /*#__PURE__*/React$1.createElement("button", {
+  return /*#__PURE__*/React.createElement("button", {
     style: _objectSpread2({
       justifyContent: 'center',
       alignItems: 'center',
@@ -1187,9 +1187,9 @@ var Button = function Button(props) {
     type: htmlType,
     onClick: onClick,
     className: className
-  }, /*#__PURE__*/React$1.createElement(Show, {
+  }, /*#__PURE__*/React.createElement(Show, {
     condition: icon
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2(_objectSpread2({
       marginRight: takeIf(!iconButton, 8)
     }, appStyles.center), {}, {
@@ -1197,7 +1197,7 @@ var Button = function Button(props) {
       width: takeIf(iconButton, "100%", 12),
       height: takeIf(iconButton, "100%", 12)
     })
-  }, icon)), /*#__PURE__*/React$1.createElement("div", {
+  }, icon)), /*#__PURE__*/React.createElement("div", {
     style: {
       fontSize: 14
     }
@@ -1214,22 +1214,22 @@ var ColorPicker = function ColorPicker(props) {
 
     _onChange(hex);
   }, [_onChange]);
-  return /*#__PURE__*/React$1.createElement(Popover, {
-    content: /*#__PURE__*/React$1.createElement(SwatchesPicker, {
+  return /*#__PURE__*/React.createElement(Popover, {
+    content: /*#__PURE__*/React.createElement(SwatchesPicker, {
       onChange: onChange
     }),
     title: "Renk"
-  }, /*#__PURE__*/React$1.createElement(Show, {
+  }, /*#__PURE__*/React.createElement(Show, {
     condition: children
-  }, children), /*#__PURE__*/React$1.createElement(Show, {
+  }, children), /*#__PURE__*/React.createElement(Show, {
     condition: !children
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "neumorphic-input"
-  }, /*#__PURE__*/React$1.createElement("p", {
+  }, /*#__PURE__*/React.createElement("p", {
     style: {
       fontWeight: 500
     }
-  }, label), /*#__PURE__*/React$1.createElement("div", {
+  }, label), /*#__PURE__*/React.createElement("div", {
     className: "neumorphic-outset-soft",
     style: {
       backgroundColor: _value,
@@ -1242,18 +1242,18 @@ var ColorPicker = function ColorPicker(props) {
 var DateDescription = function DateDescription(props) {
   var date = props.date;
   var description = dateToDescription(date);
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     style: {
       minWidth: 100,
       alignItems: 'flex-end'
     },
     className: "center-column"
-  }, /*#__PURE__*/React$1.createElement("p", {
+  }, /*#__PURE__*/React.createElement("p", {
     style: {
       color: '#aaa',
       margin: 0
     }
-  }, description), /*#__PURE__*/React$1.createElement("p", {
+  }, description), /*#__PURE__*/React.createElement("p", {
     style: {
       color: '#aaa',
       margin: 0
@@ -1266,12 +1266,12 @@ var DescriptionIcon = function DescriptionIcon(props) {
       titleStyle = props.titleStyle,
       icon = props.icon,
       description = props.description;
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     className: "center",
     style: _objectSpread2({
       flexDirection: 'column'
     }, style || {})
-  }, icon, /*#__PURE__*/React$1.createElement("div", {
+  }, icon, /*#__PURE__*/React.createElement("div", {
     style: {
       paddingHorizontal: 8,
       paddingVertical: 2,
@@ -1279,7 +1279,7 @@ var DescriptionIcon = function DescriptionIcon(props) {
       backgroundColor: '#eee',
       borderRadius: 10
     }
-  }, /*#__PURE__*/React$1.createElement("p", {
+  }, /*#__PURE__*/React.createElement("p", {
     style: _objectSpread2({
       margin: 0,
       padding: '4px 8px',
@@ -1296,26 +1296,26 @@ var OverflowImages = function OverflowImages(props) {
       size = props.size;
   var maxCount = _maxCount || 3;
   var overflowItemsCount = images.length - maxCount;
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2(_objectSpread2({}, appStyles.center), {}, {
       flexDirection: 'column',
       marginRight: 8
     })
-  }, /*#__PURE__*/React$1.createElement(Badge, {
+  }, /*#__PURE__*/React.createElement(Badge, {
     count: overflowItemsCount > 0 ? "+".concat(overflowItemsCount) : undefined
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2({}, appStyles.center)
   }, images.filter(function (_, index) {
     return index < maxCount;
   }).map(function (image, index) {
-    return /*#__PURE__*/React$1.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", {
       style: {
         border: '1px solid white',
         marginLeft: index && -32,
         borderRadius: size
       },
       key: index
-    }, /*#__PURE__*/React$1.createElement(AttachmentImage, {
+    }, /*#__PURE__*/React.createElement(AttachmentImage, {
       id: image,
       key: index,
       size: size
@@ -1327,20 +1327,20 @@ var DescriptionOverflowImages = function DescriptionOverflowImages(props) {
   var title = props.title,
       images = props.images,
       maxCount = props.maxCount;
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2(_objectSpread2({}, appStyles.row), {}, {
       alignItems: 'center'
     })
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2(_objectSpread2({}, appStyles.row), {}, {
       alignItems: 'center',
       marginRight: 4
     })
-  }, /*#__PURE__*/React$1.createElement(OverflowImages, {
+  }, /*#__PURE__*/React.createElement(OverflowImages, {
     images: images,
     maxCount: maxCount,
     size: 40
-  })), /*#__PURE__*/React$1.createElement("p", {
+  })), /*#__PURE__*/React.createElement("p", {
     style: {
       fontWeight: '600',
       fontSize: 18,
@@ -1356,25 +1356,25 @@ var DescriptionRow = function DescriptionRow(props) {
       _titleSpan = props.titleSpan,
       style = props.style;
   var titleSpan = _titleSpan || 4;
-  return /*#__PURE__*/React$1.createElement(Row, {
+  return /*#__PURE__*/React.createElement(Row, {
     style: _objectSpread2(_objectSpread2({}, style || {}), {}, {
       alignItems: 'center'
     })
-  }, /*#__PURE__*/React$1.createElement(Col, {
+  }, /*#__PURE__*/React.createElement(Col, {
     span: titleSpan,
     style: {
       lineHeight: 0
     }
-  }, /*#__PURE__*/React$1.createElement("span", {
+  }, /*#__PURE__*/React.createElement("span", {
     style: {
       margin: 0,
       fontWeight: 'bold',
       color: 'black',
       lineHeight: 0
     }
-  }, title)), /*#__PURE__*/React$1.createElement(Col, {
+  }, title)), /*#__PURE__*/React.createElement(Col, {
     span: 24 - titleSpan
-  }, descriptionRenderer ? descriptionRenderer : /*#__PURE__*/React$1.createElement("span", {
+  }, descriptionRenderer ? descriptionRenderer : /*#__PURE__*/React.createElement("span", {
     style: {
       margin: 0,
       color: 'black',
@@ -1389,18 +1389,18 @@ var EmptyResult = function EmptyResult(props) {
       style = props.style,
       _size = props.size;
   var size = _size || 120;
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2({}, style || {})
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "center",
     style: {
       width: '100%',
       flexDirection: 'column'
     }
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: "center neumorphic-outset",
     style: _objectSpread2({}, appStyles.rounded(size))
-  }, icon)), /*#__PURE__*/React$1.createElement("div", null, /*#__PURE__*/React$1.createElement("p", {
+  }, icon)), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
     style: {
       textAlign: 'center',
       fontWeight: '100',
@@ -1418,16 +1418,16 @@ var Header = function Header(props) {
       style = props.style,
       titleStyle = props.titleStyle,
       extra = props.extra;
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2(_objectSpread2({}, appStyles.row), {}, {
       alignItems: 'center',
       minHeight: 48
     }, style || {})
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2({
       flex: 1
     }, titleStyle || {})
-  }, titleRenderer ? titleRenderer : /*#__PURE__*/React$1.createElement("div", {
+  }, titleRenderer ? titleRenderer : /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2({
       margin: 0
     }, appStyles.cardTitle)
@@ -1443,12 +1443,12 @@ var IncDecField = function IncDecField(props) {
       plusDisabled = props.plusDisabled,
       children = props.children;
   var size = _size || 32;
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2(_objectSpread2(_objectSpread2({
       marginVertical: 16
     }, appStyles.row), appStyles.spreadHorizontally), style || {})
-  }, /*#__PURE__*/React$1.createElement(Button, {
-    icon: /*#__PURE__*/React$1.createElement(MinusOutlined, {
+  }, /*#__PURE__*/React.createElement(Button, {
+    icon: /*#__PURE__*/React.createElement(MinusOutlined, {
       style: {
         fontSize: size / 2
       }
@@ -1462,8 +1462,8 @@ var IncDecField = function IncDecField(props) {
     onClick: function onClick() {
       return onChange(value - 1);
     }
-  }), children, /*#__PURE__*/React$1.createElement(Button, {
-    icon: /*#__PURE__*/React$1.createElement(PlusOutlined, {
+  }), children, /*#__PURE__*/React.createElement(Button, {
+    icon: /*#__PURE__*/React.createElement(PlusOutlined, {
       style: {
         fontSize: size / 2
       }
@@ -1484,19 +1484,19 @@ var InfoRow = function InfoRow(props) {
   var label = props.label,
       content = props.content,
       children = props.children;
-  return /*#__PURE__*/React$1.createElement(Row, {
+  return /*#__PURE__*/React.createElement(Row, {
     style: {
       margin: '16px 0'
     }
-  }, /*#__PURE__*/React$1.createElement(Col, {
+  }, /*#__PURE__*/React.createElement(Col, {
     span: 6
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
       fontWeight: '500'
     }
-  }, label)), /*#__PURE__*/React$1.createElement(Col, {
+  }, label)), /*#__PURE__*/React.createElement(Col, {
     span: 18
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
       color: '#aaa'
     }
@@ -1517,21 +1517,21 @@ var InfoRowForm = function InfoRowForm(props) {
       rest = _objectWithoutProperties(props, ["label", "name", "onChange", "value", "component"]);
 
   useEffect(function () {
-    setRenderComponent( /*#__PURE__*/React$1.createElement(component || Input, {}));
+    setRenderComponent( /*#__PURE__*/React.createElement(component || Input, {}));
   }, [component]);
-  return /*#__PURE__*/React$1.createElement(Row, {
+  return /*#__PURE__*/React.createElement(Row, {
     style: {
       margin: '16px 0'
     }
-  }, /*#__PURE__*/React$1.createElement(Col, {
+  }, /*#__PURE__*/React.createElement(Col, {
     span: 6
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
       fontWeight: '500'
     }
-  }, label)), /*#__PURE__*/React$1.createElement(Col, {
+  }, label)), /*#__PURE__*/React.createElement(Col, {
     span: 18
-  }, RenderComponent ? /*#__PURE__*/React$1.createElement(RenderComponent.type, _extends({
+  }, RenderComponent ? /*#__PURE__*/React.createElement(RenderComponent.type, _extends({
     value: value,
     onChange: function onChange() {
       for (var _len = arguments.length, a = new Array(_len), _key = 0; _key < _len; _key++) {
@@ -1552,7 +1552,7 @@ var List = function List(props) {
   var items = _items || [];
   if (loading) return loadingRenderer;
   if (!items.length) return emptyRenderer;
-  return /*#__PURE__*/React$1.createElement(React$1.Fragment, null, items.map(function (item, index) {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, items.map(function (item, index) {
     return renderer({
       item: item,
       index: index
@@ -1577,64 +1577,64 @@ var ListItem = function ListItem(props) {
       headerContainerStyle = props.headerContainerStyle,
       selected = props.selected,
       children = props.children;
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2({
       borderBottom: lastItem && '1px solid #eee',
       padding: 4
     }, style || {}),
     className: "".concat(takeIf(onClick, "neumorphic-clickable"), " ").concat(takeIf(selected, "neumorphic-outset")),
     onClick: onClick
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2({
       display: "flex",
       alignItems: 'center'
     }, headerContainerStyle || {})
-  }, /*#__PURE__*/React$1.createElement(Show, {
+  }, /*#__PURE__*/React.createElement(Show, {
     condition: avatar
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       justifyContent: 'center',
       marginRight: takeIf(!!title || !!titleRenderer, 8, 0)
     }
-  }, avatar)), /*#__PURE__*/React$1.createElement("div", {
+  }, avatar)), /*#__PURE__*/React.createElement("div", {
     style: {
       width: '100%'
     },
     onClick: onTitleClick,
     className: onTitleClick ? "clickable" : ""
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2({
       padding: 4
     }, titleContainerStyle || {})
-  }, /*#__PURE__*/React$1.createElement(Show, {
+  }, /*#__PURE__*/React.createElement(Show, {
     condition: titleRenderer
-  }, titleRenderer), /*#__PURE__*/React$1.createElement(Show, {
+  }, titleRenderer), /*#__PURE__*/React.createElement(Show, {
     condition: title
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2({
       margin: 0,
       color: takeIf(selected, "#1890ff")
     }, titleStyle || {})
-  }, title)), /*#__PURE__*/React$1.createElement(Show, {
+  }, title)), /*#__PURE__*/React.createElement(Show, {
     condition: subtitle
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2({
       margin: 0,
       fontSize: 10,
       color: 'black'
     }, subtitleStyle || {})
-  }, subtitle)), /*#__PURE__*/React$1.createElement(Show, {
+  }, subtitle)), /*#__PURE__*/React.createElement(Show, {
     condition: subtitleRenderer
-  }, subtitleRenderer))), /*#__PURE__*/React$1.createElement(Show, {
+  }, subtitleRenderer))), /*#__PURE__*/React.createElement(Show, {
     condition: description
   }, description)), children);
 };
 
 var Loading = function Loading(props) {
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2({}, appStyles.center)
-  }, /*#__PURE__*/React$1.createElement(Spin, props));
+  }, /*#__PURE__*/React.createElement(Spin, props));
 };
 
 var Neumorphic = function Neumorphic(props) {
@@ -1650,7 +1650,7 @@ var Neumorphic = function Neumorphic(props) {
 
 var PageTitle = function PageTitle(props) {
   var title = props.title;
-  return /*#__PURE__*/React$1.createElement("h1", {
+  return /*#__PURE__*/React.createElement("h1", {
     className: "neumorphic-title"
   }, title);
 };
@@ -1669,14 +1669,14 @@ var PostCard = function PostCard(props) {
       onTitleClick = props.onTitleClick,
       childrenContainerStyle = props.childrenContainerStyle,
       children = props.children;
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2(_objectSpread2({}, style || {}), {}, {
       borderRadius: 10
     }),
     className: "neumorphic-outset"
-  }, /*#__PURE__*/React$1.createElement(Show, {
+  }, /*#__PURE__*/React.createElement(Show, {
     condition: avatar || title || titleRenderer || description || subtitle
-  }, /*#__PURE__*/React$1.createElement(ListItem, {
+  }, /*#__PURE__*/React.createElement(ListItem, {
     avatar: avatar,
     title: title,
     titleRenderer: titleRenderer,
@@ -1691,11 +1691,11 @@ var PostCard = function PostCard(props) {
     subtitle: subtitle,
     onTitleClick: onTitleClick,
     onClick: onHeaderClick
-  })), children ? /*#__PURE__*/React$1.createElement("div", {
+  })), children ? /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2(_objectSpread2({}, appStyles.card), {}, {
       backgroundColor: 'transparent'
     })
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2({
       margin: "0 16px"
     }, childrenContainerStyle || {})
@@ -1704,7 +1704,7 @@ var PostCard = function PostCard(props) {
 
 var QuantityBadge = function QuantityBadge(props) {
   var quantity = props.quantity;
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     style: {
       backgroundColor: constants.mainColor,
       width: 30,
@@ -1712,7 +1712,7 @@ var QuantityBadge = function QuantityBadge(props) {
       borderRadius: 60
     },
     className: "center"
-  }, /*#__PURE__*/React$1.createElement("p", {
+  }, /*#__PURE__*/React.createElement("p", {
     style: {
       margin: 0,
       color: 'white',
@@ -1730,12 +1730,12 @@ var QuantityField = function QuantityField(props) {
       plusDisabled = props.plusDisabled,
       total = props.total;
   var size = _size || 32;
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2(_objectSpread2({
       marginVertical: 16
     }, appStyles.row), style || {})
-  }, /*#__PURE__*/React$1.createElement(Button, {
-    icon: /*#__PURE__*/React$1.createElement(MinusOutlined, {
+  }, /*#__PURE__*/React.createElement(Button, {
+    icon: /*#__PURE__*/React.createElement(MinusOutlined, {
       color: "white"
     }),
     disabled: minusDisabled,
@@ -1749,23 +1749,23 @@ var QuantityField = function QuantityField(props) {
     onClick: function onClick() {
       return onChange(value - 1);
     }
-  }), /*#__PURE__*/React$1.createElement("div", {
+  }), /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2(_objectSpread2({}, appStyles.center), {}, {
       width: size,
       height: size,
       border: '1px solid #aaa'
     })
-  }, /*#__PURE__*/React$1.createElement("div", null, value)), /*#__PURE__*/React$1.createElement(Show, {
+  }, /*#__PURE__*/React.createElement("div", null, value)), /*#__PURE__*/React.createElement(Show, {
     condition: total !== undefined
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2(_objectSpread2({}, appStyles.center), {}, {
       backgroundColor: '#eee',
       width: size,
       height: size,
       border: '1px solid #aaa'
     })
-  }, /*#__PURE__*/React$1.createElement("div", null, total))), /*#__PURE__*/React$1.createElement(Button, {
-    icon: /*#__PURE__*/React$1.createElement(PlusOutlined, {
+  }, /*#__PURE__*/React.createElement("div", null, total))), /*#__PURE__*/React.createElement(Button, {
+    icon: /*#__PURE__*/React.createElement(PlusOutlined, {
       color: "white"
     }),
     disabled: plusDisabled,
@@ -1865,7 +1865,7 @@ var QueryAutoComplete = /*#__PURE__*/forwardRef(function (props, ref) {
   };
 
   var options = getACOptions();
-  return /*#__PURE__*/React$1.createElement(Select, _extends({}, rest, {
+  return /*#__PURE__*/React.createElement(Select, _extends({}, rest, {
     options: options,
     showSearch: true,
     value: value,
@@ -1877,7 +1877,7 @@ var QueryAutoComplete = /*#__PURE__*/forwardRef(function (props, ref) {
     defaultActiveFirstOption: true,
     notFoundContent: fetched && !options.length ? "Bulunamadı" : null
   }), options.map(function (option, index) {
-    return /*#__PURE__*/React$1.createElement(Option, {
+    return /*#__PURE__*/React.createElement(Option, {
       key: index,
       value: option.value
     }, option.label);
@@ -1927,7 +1927,7 @@ var SelectItemsRenderer = /*#__PURE__*/forwardRef(function (props, ref) {
     return value;
   };
 
-  return /*#__PURE__*/React$1.createElement(Select, _extends({}, rest, {
+  return /*#__PURE__*/React.createElement(Select, _extends({}, rest, {
     mode: mode,
     labelInValue: labelInValue,
     value: getValue(),
@@ -1938,7 +1938,7 @@ var SelectItemsRenderer = /*#__PURE__*/forwardRef(function (props, ref) {
     onChange: onChange,
     onSearch: onSearch
   }), (items || []).map(function (item, index) {
-    return /*#__PURE__*/React$1.createElement(Option$1, {
+    return /*#__PURE__*/React.createElement(Option$1, {
       key: index,
       value: item[valueField]
     }, item[descriptionField]);
@@ -1972,7 +1972,7 @@ var QuerySelect = /*#__PURE__*/forwardRef(function (props, ref) {
       setItems(response.data);
     }
   }, [fetched, response]);
-  return /*#__PURE__*/React$1.createElement(SelectItemsRenderer, _extends({
+  return /*#__PURE__*/React.createElement(SelectItemsRenderer, _extends({
     items: items,
     ref: ref
   }, rest));
@@ -1998,24 +1998,24 @@ var Rate = function Rate(props) {
 
     setStars(_stars);
   }, [total, value]);
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2(_objectSpread2(_objectSpread2({}, appStyles.center), appStyles.grid), style || {})
   }, stars.map(function (i, index) {
-    return /*#__PURE__*/React$1.createElement("div", {
+    return /*#__PURE__*/React.createElement("div", {
       style: {
         margin: 4
       },
       key: index
-    }, /*#__PURE__*/React$1.createElement(Show, {
+    }, /*#__PURE__*/React.createElement(Show, {
       condition: i
-    }, /*#__PURE__*/React$1.createElement(StarFilled, {
+    }, /*#__PURE__*/React.createElement(StarFilled, {
       style: {
         color: 'orange',
         fontSize: size
       }
-    })), /*#__PURE__*/React$1.createElement(Show, {
+    })), /*#__PURE__*/React.createElement(Show, {
       condition: !i
-    }, /*#__PURE__*/React$1.createElement(StarOutlined, {
+    }, /*#__PURE__*/React.createElement(StarOutlined, {
       style: {
         color: "orange",
         fontSize: size
@@ -2027,7 +2027,7 @@ var Rate = function Rate(props) {
 var RowStretch = function RowStretch(props) {
   var style = props.style,
       children = props.children;
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2({
       display: 'flex',
       alignItems: 'stretch',
@@ -2042,7 +2042,7 @@ var Section = function Section(props) {
       className = props.className,
       style = props.style,
       children = props.children;
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     className: className,
     style: _objectSpread2({
       border: '1px solid #ddd',
@@ -2051,13 +2051,13 @@ var Section = function Section(props) {
       margin: 8,
       height: '100%'
     }, style || {})
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between'
     }
-  }, title ? /*#__PURE__*/React$1.createElement("div", {
+  }, title ? /*#__PURE__*/React.createElement("div", {
     style: {
       fontWeight: 'bold',
       fontSize: 18
@@ -2067,11 +2067,11 @@ var Section = function Section(props) {
 
 var Shimmer = function Shimmer(props) {
   var style = props.style;
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2(_objectSpread2({}, appStyles.card), {}, {
       padding: 16
     }, style || {})
-  }, /*#__PURE__*/React$1.createElement(Skeleton, _extends({
+  }, /*#__PURE__*/React.createElement(Skeleton, _extends({
     loading: true
   }, props)));
 };
@@ -2081,18 +2081,18 @@ var StarCount = function StarCount(props) {
       style = props.style,
       _size = props.size;
   var size = _size || 24;
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2(_objectSpread2({}, appStyles.row), {}, {
       alignItems: 'center'
     }, style || {})
-  }, /*#__PURE__*/React$1.createElement("p", {
+  }, /*#__PURE__*/React.createElement("p", {
     style: {
       margin: 0,
       fontWeight: 'bold',
       fontSize: size,
       marginRight: 4
     }
-  }, quantity), /*#__PURE__*/React$1.createElement(StarFilled, {
+  }, quantity), /*#__PURE__*/React.createElement(StarFilled, {
     style: {
       color: 'orange',
       fontSize: size
@@ -2118,7 +2118,7 @@ var Tag = function Tag(props) {
   var color = _color || (generatedColor ? generatedColorFromString(description) : "#cccccc");
   var textColor = type === "filled" ? '#ffffff' : color || "";
   var backgroundColor = type === "filled" ? color : "".concat(changeColor(color, 150));
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2(_objectSpread2({
       padding: "8px 16px",
       //border: type === 'filled' ? '' : `1px solid ${color}`,
@@ -2128,7 +2128,7 @@ var Tag = function Tag(props) {
     }, appStyles.center), style || {}),
     className: "\n             ".concat(takeIf(onClick, "clickable", ""), "\n              ").concat(takeIf(neumorphic, "neumorphic-outset-soft"), " ").concat(className || "", "\n              "),
     onClick: onClick
-  }, /*#__PURE__*/React$1.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     className: takeIf(onTextClick, "clickable", ""),
     style: _objectSpread2({
       color: textColor,
@@ -2137,10 +2137,10 @@ var Tag = function Tag(props) {
       width: '100%'
     }, textStyle || {}),
     onClick: onTextClick
-  }, children), /*#__PURE__*/React$1.createElement(Show, {
+  }, children), /*#__PURE__*/React.createElement(Show, {
     condition: onClear
-  }, /*#__PURE__*/React$1.createElement(Button, {
-    icon: /*#__PURE__*/React$1.createElement(CloseOutlined, {
+  }, /*#__PURE__*/React.createElement(Button, {
+    icon: /*#__PURE__*/React.createElement(CloseOutlined, {
       style: {
         fontSize: 11
       }
@@ -2172,24 +2172,24 @@ var Textfield = function Textfield(props) {
   var onKeyPress = useCallback(function (e) {
     if (["enter", "Enter"].indexOf(e.key) > -1) if (onPressEnter) onPressEnter(e);
   }, [onPressEnter]);
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     className: "neumorphic-input",
     style: {
       width: '100%'
     }
-  }, /*#__PURE__*/React$1.createElement(Show, {
+  }, /*#__PURE__*/React.createElement(Show, {
     condition: label
-  }, /*#__PURE__*/React$1.createElement("p", {
+  }, /*#__PURE__*/React.createElement("p", {
     className: "no-select",
     style: {
       fontWeight: 500
     },
     onClick: focusInput
-  }, label)), /*#__PURE__*/React$1.createElement("div", {
+  }, label)), /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2(_objectSpread2({}, appStyles.row), {}, {
       alignItems: 'center'
     })
-  }, prefix, /*#__PURE__*/React$1.createElement("input", _extends({
+  }, prefix, /*#__PURE__*/React.createElement("input", _extends({
     className: "".concat(className || "", " input"),
     style: {
       width: '100%'
@@ -2250,7 +2250,7 @@ var TextListField = function TextListField(props) {
 
     _onChange(_toConsumableArray(values));
   }, [values, valueTransformer, _onChange]);
-  return /*#__PURE__*/React$1.createElement(React$1.Fragment, null, /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2(_objectSpread2({}, appStyles.grid), listContainerStyle || {})
   }, values.map(function (item, index) {
     return valuesRenderer({
@@ -2261,11 +2261,11 @@ var TextListField = function TextListField(props) {
       onSave: onSave,
       onChange: commitChange
     });
-  })), /*#__PURE__*/React$1.createElement("div", {
+  })), /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2(_objectSpread2({}, appStyles.row), {}, {
       marginTop: 8
     })
-  }, /*#__PURE__*/React$1.createElement(Textfield, {
+  }, /*#__PURE__*/React.createElement(Textfield, {
     value: value[descriptionKey],
     label: label,
     onChange: function onChange(e) {
@@ -2273,8 +2273,8 @@ var TextListField = function TextListField(props) {
     },
     onPressEnter: onSave,
     onBlur: onSave,
-    suffix: /*#__PURE__*/React$1.createElement(Button, {
-      icon: /*#__PURE__*/React$1.createElement(CheckOutlined, null),
+    suffix: /*#__PURE__*/React.createElement(Button, {
+      icon: /*#__PURE__*/React.createElement(CheckOutlined, null),
       type: "primary",
       disabled: !value[descriptionKey],
       onClick: onSave
@@ -2284,7 +2284,7 @@ var TextListField = function TextListField(props) {
 
 var ThreeDot = function ThreeDot(props) {
   var children = props.children;
-  return /*#__PURE__*/React$1.createElement("div", {
+  return /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'inline-block',
       overflow: 'hidden',
@@ -2292,7 +2292,7 @@ var ThreeDot = function ThreeDot(props) {
       whiteSpace: 'nowrap',
       width: '100%'
     }
-  }, /*#__PURE__*/React$1.createElement(Tooltip, {
+  }, /*#__PURE__*/React.createElement(Tooltip, {
     title: children
   }, children));
 };
