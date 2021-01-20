@@ -7,15 +7,16 @@
   "module": "dist/index.esm.js",
   "source": "src/index.js",
   "dependencies": {
+    "@ant-design/icons": "^4.4.0",
+    "@reactivers/generic-ui": "file:../generic-ui",
+    "@reactivers/hooks": "file:/Users/muratguney/Desktop/JavaScript/reactivers-library/hooks",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "antd": "^4.10.3",
     "history": "^5.0.0",
-    "@reactivers/hooks": "file:/Users/muratguney/Desktop/JavaScript/reactivers-library/hooks",
     "moment": "^2.29.1",
     "react-color": "^2.19.3",
-    "antd": "^4.10.3",
-    "@ant-design/icons": "^4.4.0",
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
@@ -32,13 +33,13 @@
     "rollup-plugin-peer-deps-external": "^2.2.4"
   },
   "peerDependencies": {
-    "react-color": "^2.19.3",
+    "@ant-design/icons": "^4.4.0",
+    "antd": "^4.10.3",
     "history": "^5.0.0",
     "moment": "^2.29.1",
     "react": "^17.0.1",
+    "react-color": "^2.19.3",
     "react-dom": "^17.0.1",
-    "antd": "^4.10.3",
-    "@ant-design/icons": "^4.4.0",
     "react-router-dom": "^5.2.0"
   },
   "scripts": {

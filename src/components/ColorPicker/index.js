@@ -1,30 +1,15 @@
-import React, {useCallback} from 'react';
-import {Popover} from "antd";
-import {SwatchesPicker} from "react-color";
-import {Show} from "@reactivers/hooks";
+import React from 'react';
+import {ColorPicker} from "@reactivers/generic-ui";
 
-const ColorPicker = props => {
-    const {value: _value, label, onChange: _onChange, children} = props;
+const NColorPicker = props => {
+    const {inputClassName: _inputClassName, colorClassName: _colorClassName, ...rest} = props;
+    let inputClassName = "neumorphic-input";
+    let colorClassName = "neumorphic-outset-soft";
 
-    const onChange = useCallback(({hex}) => {
-        _onChange(hex)
-    }, [_onChange])
+    if (_inputClassName) inputClassName += _inputClassName;
+    if (_colorClassName) colorClassName += _colorClassName;
 
-    return (
-        <Popover content={
-            <SwatchesPicker onChange={onChange}/>
-        } title="Renk">
-            <Show condition={children}>
-                {children}
-            </Show>
-            <Show condition={!children}>
-                <div className="neumorphic-input">
-                    <p style={{fontWeight: 500}}>{label}</p>
-                    <div className='neumorphic-outset-soft' style={{backgroundColor: _value, height: 32, width: '100%'}}/>
-                </div>
-            </Show>
-        </Popover>
-    )
+    return <ColorPicker inputClassName={inputClassName} colorClassName={colorClassName} {...rest}/>
 }
 
-export default ColorPicker;
+export default NColorPicker;

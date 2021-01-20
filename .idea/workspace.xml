@@ -8,7 +8,44 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.cjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.cjs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.esm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AttachmentImage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Image/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Button/NewLinkButton.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Button/ShowAllButton.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Button/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ColorPicker/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ColorPicker/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DateDescription/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DescriptionIcon/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DescriptionOverflowImages/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DescriptionRow/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EmptyResult/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EmptyResult/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/IncDecField/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/InfoRow/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/InfoRowForm/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/List/ListApi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/List/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ListItem/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListItem/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Loading/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Loading/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Neumorphic/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Neumorphic/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OverflowImages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OverflowImages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PostCard/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/QuantityBadge/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/QuantityField/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/QueryAutoComplete/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/QuerySelect/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Rate/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RowStretch/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Section/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SelectItemsRenderer/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Shimmer/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StarCount/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tag/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tag/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TextListField/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TextListField/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Textfield/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Textfield/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ThreeDot/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +115,8 @@
       <workItem from="1608758068069" duration="14105000" />
       <workItem from="1610708342126" duration="689000" />
       <workItem from="1611062192531" duration="1449000" />
-      <workItem from="1611067905671" duration="7514000" />
+      <workItem from="1611067905671" duration="7744000" />
+      <workItem from="1611138229707" duration="10533000" />
     </task>
     <servers />
   </component>

@@ -1,10 +1,9 @@
 import React from "react";
-import {Spin} from "antd";
-import {appStyles} from "@reactivers/hooks";
+import {appStyles} from "@reactivers/generic-ui";
 
 const Loading = props => {
     return <div style={{...appStyles.center}}>
-        <Spin {...props} />
+        Yükleniyor
     </div>
 }
 
