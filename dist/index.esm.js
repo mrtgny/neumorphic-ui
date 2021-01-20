@@ -1,10 +1,9 @@
-import React, { useState, useCallback, useEffect, cloneElement, useRef, useMemo } from 'react';
+import React, { useState, useCallback, useRef, useEffect, cloneElement, useMemo } from 'react';
 import 'moment';
 import 'moment/locale/tr';
 import 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { SwatchesPicker } from 'react-color';
-import Tooltip from 'rc-tooltip';
 
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -576,6 +575,19 @@ var appStyles = {
     width: '100%',
     objectFit: "cover",
     borderRadius: "50%"
+  },
+  threeDot: {
+    whiteSpace: 'nowrap',
+    width: '100%',
+    display: 'inline-block',
+    textOverflow: 'ellipsis',
+    overflow: 'hidden'
+  },
+  toolTip: {
+    backgroundColor: 'rgba(0,0,0,0.7)',
+    color: 'white',
+    padding: "2px 6px",
+    borderRadius: 10
   }
 };
 
@@ -717,7 +729,11 @@ var styles = {
 
 var Popover = function Popover(props) {
   var overlay = props.overlay,
+      _trigger = props.trigger,
+      _alignment = props.alignment,
       children = props.children;
+  var trigger = coalasce(_trigger, "click");
+  var alignment = coalasce(_alignment, "bottom");
   var target = useRef(null);
 
   var _useState = useState(false),
@@ -725,10 +741,7 @@ var Popover = function Popover(props) {
       displayColorPicker = _useState2[0],
       setDisplayColorPicker = _useState2[1];
 
-  var _useState3 = useState({
-    left: 0,
-    top: 0
-  }),
+  var _useState3 = useState({}),
       _useState4 = _slicedToArray(_useState3, 2),
       position = _useState4[0],
       setPosition = _useState4[1];
@@ -740,27 +753,73 @@ var Popover = function Popover(props) {
       var _ref = target.current.getBoundingClientRect() || {},
           left = _ref.left,
           top = _ref.top,
+          bottom = _ref.bottom,
+          right = _ref.right,
           height = _ref.height;
 
-      setPosition({
-        left: left,
-        top: top + height
-      });
+      switch (alignment) {
+        case "bottom":
+          setPosition({
+            left: left,
+            top: bottom
+          });
+          break;
+
+        case "top":
+          setPosition({
+            left: left,
+            bottom: top
+          });
+          break;
+
+        case "left":
+          setPosition({
+            right: left,
+            top: top
+          });
+          break;
+
+        case "right":
+          setPosition({
+            left: right,
+            top: top
+          });
+          break;
+      }
     }
   }, [target]);
+  var showPopoverClick = useCallback(function (e) {
+    if (trigger === "click") showPopover();
+  }, [showPopover, trigger]);
+  var showPopoverMouseEnter = useCallback(function (e) {
+    if (trigger === "mouse") showPopover();
+  }, [showPopover, trigger]);
+  var stopPropagation = useCallback(function (e) {
+    e.stopPropagation();
+  }, []);
   var closePopover = useCallback(function () {
     setDisplayColorPicker(false);
   }, []);
+  var closePopoverClick = useCallback(function () {
+    if (trigger === "click") closePopover();
+  }, [target, closePopover]);
+  var closePopoverMouseEnter = useCallback(function () {
+    if (trigger === "mouse") closePopover();
+  }, [target, closePopover]);
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-    onClick: showPopover,
+    onClick: showPopoverClick,
+    onMouseEnter: showPopoverMouseEnter,
     ref: target
   }, children), /*#__PURE__*/React.createElement(Show, {
     condition: displayColorPicker
   }, /*#__PURE__*/React.createElement("div", {
     style: styles.cover,
-    onClick: closePopover
+    onClick: closePopoverClick,
+    onMouseEnter: closePopoverMouseEnter
   }, /*#__PURE__*/React.createElement("div", {
-    style: _objectSpread2(_objectSpread2({}, styles.popover), position)
+    style: _objectSpread2(_objectSpread2({}, styles.popover), position),
+    onClick: stopPropagation,
+    onMouseEnter: stopPropagation
   }, overlay))));
 };
 
@@ -1184,17 +1243,16 @@ var TextListField = function TextListField(props) {
 };
 
 var ThreeDot = function ThreeDot(props) {
-  var children = props.children;
-  return /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'inline-block',
-      overflow: 'hidden',
-      textOverflow: 'ellipsis',
-      whiteSpace: 'nowrap',
-      width: '100%'
-    }
-  }, /*#__PURE__*/React.createElement(Tooltip, {
-    overlay: children
+  var title = props.title,
+      children = props.children;
+  return /*#__PURE__*/React.createElement(Popover, {
+    trigger: "mouse",
+    alignment: "top",
+    overlay: /*#__PURE__*/React.createElement("div", {
+      style: appStyles.toolTip
+    }, title || children)
+  }, /*#__PURE__*/React.createElement("div", {
+    style: appStyles.threeDot
   }, children));
 };
 
@@ -1664,4 +1722,4 @@ var NTextListField = function NTextListField(props) {
   }, rest));
 };
 
-export { NButton as Button, NCard as Card, NColorPicker as ColorPicker, NEmptyResult as EmptyResult, Image, NListItem as ListItem, Loading, Neumorphic, OverflowImages, PageTitle, NTag as Tag, NTextListField as TextListField, NTextfield as Textfield, ThreeDot, appStyles };
+export { NButton as Button, NCard as Card, NColorPicker as ColorPicker, NEmptyResult as EmptyResult, Image, NListItem as ListItem, Loading, Neumorphic, OverflowImages, PageTitle, Popover, NTag as Tag, NTextListField as TextListField, NTextfield as Textfield, ThreeDot, appStyles };

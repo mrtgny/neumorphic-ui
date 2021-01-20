@@ -1,4 +1,4 @@
-export {Image, ThreeDot, appStyles} from '@reactivers/generic-ui';
+export {Image, ThreeDot, appStyles, Popover} from '@reactivers/generic-ui';
 export {default as Button} from './components/Button';
 export {default as ColorPicker} from './components/ColorPicker';
 export {default as EmptyResult} from './components/EmptyResult';
