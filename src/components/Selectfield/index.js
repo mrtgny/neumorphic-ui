@@ -1,5 +1,5 @@
 import React from 'react';
-import {Selectfield} from '@reactivers/hooks'
+import {Selectfield} from '@reactivers/generic-ui'
 
 const NSelectfield = props => {
     const {className: _className, ...rest} = props;

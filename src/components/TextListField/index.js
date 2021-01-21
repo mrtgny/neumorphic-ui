@@ -1,6 +1,6 @@
 import React from 'react';
 import {TextListField} from "@reactivers/generic-ui";
-import {Button} from "../../index";
+import Button from "../Button";
 
 const NTextListField = props => {
     const {
