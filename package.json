@@ -19,11 +19,13 @@
     "@babel/preset-react": "^7.12.10",
     "@rollup/plugin-babel": "^5.2.2",
     "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.4",
     "rollup": "^2.35.1",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4"
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.0"
   },
   "peerDependencies": {
     "@reactivers/hooks": "file:/Users/muratguney/Desktop/JavaScript/reactivers-library/hooks",

@@ -303,6 +303,12 @@ Object.defineProperty(exports, 'Badge', {
     return genericUi.Badge;
   }
 });
+Object.defineProperty(exports, 'Col', {
+  enumerable: true,
+  get: function () {
+    return genericUi.Col;
+  }
+});
 Object.defineProperty(exports, 'FadeAnimation', {
   enumerable: true,
   get: function () {
@@ -319,6 +325,12 @@ Object.defineProperty(exports, 'Form', {
   enumerable: true,
   get: function () {
     return genericUi.Form;
+  }
+});
+Object.defineProperty(exports, 'Grid', {
+  enumerable: true,
+  get: function () {
+    return genericUi.Grid;
   }
 });
 Object.defineProperty(exports, 'Header', {
@@ -351,6 +363,12 @@ Object.defineProperty(exports, 'Mapper', {
     return genericUi.Mapper;
   }
 });
+Object.defineProperty(exports, 'Modal', {
+  enumerable: true,
+  get: function () {
+    return genericUi.Modal;
+  }
+});
 Object.defineProperty(exports, 'OverflowImages', {
   enumerable: true,
   get: function () {
@@ -375,6 +393,12 @@ Object.defineProperty(exports, 'Redirect', {
     return genericUi.Redirect;
   }
 });
+Object.defineProperty(exports, 'Row', {
+  enumerable: true,
+  get: function () {
+    return genericUi.Row;
+  }
+});
 Object.defineProperty(exports, 'Section', {
   enumerable: true,
   get: function () {
@@ -397,6 +421,12 @@ Object.defineProperty(exports, 'ThreeDot', {
   enumerable: true,
   get: function () {
     return genericUi.ThreeDot;
+  }
+});
+Object.defineProperty(exports, 'Upload', {
+  enumerable: true,
+  get: function () {
+    return genericUi.Upload;
   }
 });
 Object.defineProperty(exports, 'appStyles', {

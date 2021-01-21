@@ -1,3 +1,5 @@
+import './css/neumorphic.css'
+
 export {
     Badge,
     FadeAnimation,
@@ -16,6 +18,11 @@ export {
     Selectfield,
     Show,
     ThreeDot,
+    Modal,
+    Upload,
+    Grid,
+    Col,
+    Row,
     OverflowImages,
     appStyles,
 } from '@reactivers/generic-ui';
