@@ -98,6 +98,7 @@ input:focus {
 .neumorphic-title {
     color: #eee;
     font-size: 4em;
+    margin-top: 0;
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5), -4px -4px 5px rgba(255, 255, 255, 1);
 }
 

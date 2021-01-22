@@ -1,9 +1,10 @@
 import React from "react";
 import {appStyles} from "@reactivers/generic-ui";
+import {getLocale, Locales} from '@reactivers/hooks'
 
 const Loading = props => {
     return <div style={{...appStyles.center}}>
-        Yükleniyor
+        {getLocale({name: Locales.Loading})}
     </div>
 }
 

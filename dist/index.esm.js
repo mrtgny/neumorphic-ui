@@ -1,7 +1,7 @@
 import { Button, Card, ColorPicker, EmptyResult, ListItem, appStyles, Modal as Modal$1, notification, notificationPusher as notificationPusher$1, Selectfield, Tag, Textfield, TextListField } from '@reactivers/generic-ui';
 export { Badge, Col, FadeAnimation, Field, Form, Grid, Header, Image, IncDecField, InfiniteScroll, Mapper, OverflowImages, Popover, Rate, Redirect, Row, Section, Show, ThreeDot, Upload, appStyles, notification, useForm } from '@reactivers/generic-ui';
 import React from 'react';
-import { takeUndefinedAsTrue, takeIf, isNullOrUndefined, coalasce } from '@reactivers/hooks';
+import { takeUndefinedAsTrue, takeIf, isNullOrUndefined, getLocale, Locales, coalasce } from '@reactivers/hooks';
 
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -188,7 +188,9 @@ var NListItem = function NListItem(props) {
 var Loading = function Loading(props) {
   return /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2({}, appStyles.center)
-  }, "Y\xFCkleniyor");
+  }, getLocale({
+    name: Locales.Loading
+  }));
 };
 
 var Modal = function Modal(props) {

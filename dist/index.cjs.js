@@ -195,7 +195,9 @@ var NListItem = function NListItem(props) {
 var Loading = function Loading(props) {
   return /*#__PURE__*/React__default['default'].createElement("div", {
     style: _objectSpread2({}, genericUi.appStyles.center)
-  }, "Y\xFCkleniyor");
+  }, hooks.getLocale({
+    name: hooks.Locales.Loading
+  }));
 };
 
 var Modal = function Modal(props) {
