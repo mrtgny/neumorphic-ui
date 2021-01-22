@@ -1,1 +1,2 @@
-export {Image as default} from '@reactivers/generic-ui';
+import {Image} from "@reactivers/generic-ui";
+export default Image;

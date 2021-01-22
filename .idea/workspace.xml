@@ -5,16 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45f24c81-32e0-4b26-bf97-fc8c512ce24b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dist/bundle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Badge/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FadeAnimation/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Grid/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Header/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/IncDecField/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/InfiniteScroll/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Mapper/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Modal/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Popover/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Rate/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Redirect/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Section/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Show/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ThreeDot/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Upload/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/bundle.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/bundle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.cjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.cjs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.esm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rollup.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/rollup.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Image/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Image/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/neumorphic.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/neumorphic.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +67,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -61,8 +76,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/hooks" />
       <recent name="$PROJECT_DIR$/src/reducers" />
     </key>
@@ -85,7 +100,8 @@
       <workItem from="1610708342126" duration="689000" />
       <workItem from="1611062192531" duration="1449000" />
       <workItem from="1611067905671" duration="7744000" />
-      <workItem from="1611138229707" duration="38409000" />
+      <workItem from="1611138229707" duration="38562000" />
+      <workItem from="1611308407930" duration="6268000" />
     </task>
     <servers />
   </component>

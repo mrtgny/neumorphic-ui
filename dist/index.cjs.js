@@ -135,6 +135,23 @@ var NButton = function NButton(props) {
   }, rest));
 };
 
+var NCard = function NCard(props) {
+  var _className = props.className,
+      _cardStyle = props.cardStyle,
+      rest = _objectWithoutProperties(props, ["className", "cardStyle"]);
+
+  var cardStyle = {
+    backgroundColor: 'transparent'
+  };
+  if (_cardStyle) cardStyle = _objectSpread2(_objectSpread2({}, cardStyle), _cardStyle);
+  var className = "neumorphic-outset ";
+  if (_className) className += _className;
+  return /*#__PURE__*/React__default['default'].createElement(genericUi.Card, _extends({
+    className: className,
+    cardStyle: cardStyle
+  }, rest));
+};
+
 var NColorPicker = function NColorPicker(props) {
   var _inputClassName = props.inputClassName,
       _colorClassName = props.colorClassName,
@@ -179,6 +196,10 @@ var Loading = function Loading(props) {
   return /*#__PURE__*/React__default['default'].createElement("div", {
     style: _objectSpread2({}, genericUi.appStyles.center)
   }, "Y\xFCkleniyor");
+};
+
+var Modal = function Modal(props) {
+  return /*#__PURE__*/React__default['default'].createElement(genericUi.Modal, props);
 };
 
 var Neumorphic = function Neumorphic(props) {
@@ -235,20 +256,15 @@ var PageTitle = function PageTitle(props) {
   }, title);
 };
 
-var NCard = function NCard(props) {
+var NSelectfield = function NSelectfield(props) {
   var _className = props.className,
-      _cardStyle = props.cardStyle,
-      rest = _objectWithoutProperties(props, ["className", "cardStyle"]);
+      rest = _objectWithoutProperties(props, ["className"]);
 
-  var cardStyle = {
-    backgroundColor: 'transparent'
-  };
-  if (_cardStyle) cardStyle = _objectSpread2(_objectSpread2({}, cardStyle), _cardStyle);
-  var className = "neumorphic-outset ";
+  var className = 'neumorphic-input';
   if (_className) className += _className;
-  return /*#__PURE__*/React__default['default'].createElement(genericUi.Card, _extends({
+  return /*#__PURE__*/React__default['default'].createElement(genericUi.Selectfield, _extends({
     className: className,
-    cardStyle: cardStyle
+    selectFieldClassName: "neumorphic-select-field"
   }, rest));
 };
 
@@ -363,12 +379,6 @@ Object.defineProperty(exports, 'Mapper', {
     return genericUi.Mapper;
   }
 });
-Object.defineProperty(exports, 'Modal', {
-  enumerable: true,
-  get: function () {
-    return genericUi.Modal;
-  }
-});
 Object.defineProperty(exports, 'OverflowImages', {
   enumerable: true,
   get: function () {
@@ -403,12 +413,6 @@ Object.defineProperty(exports, 'Section', {
   enumerable: true,
   get: function () {
     return genericUi.Section;
-  }
-});
-Object.defineProperty(exports, 'Selectfield', {
-  enumerable: true,
-  get: function () {
-    return genericUi.Selectfield;
   }
 });
 Object.defineProperty(exports, 'Show', {
@@ -453,8 +457,10 @@ exports.ColorPicker = NColorPicker;
 exports.EmptyResult = NEmptyResult;
 exports.ListItem = NListItem;
 exports.Loading = Loading;
+exports.Modal = Modal;
 exports.Neumorphic = Neumorphic;
 exports.PageTitle = PageTitle;
+exports.Selectfield = NSelectfield;
 exports.Tag = NTag;
 exports.TextListField = NTextListField;
 exports.Textfield = NTextfield;

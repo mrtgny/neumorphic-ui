@@ -1,5 +1,5 @@
-import { Button, ColorPicker, EmptyResult, ListItem, appStyles, notification, notificationPusher as notificationPusher$1, Card, Tag, Textfield, TextListField } from '@reactivers/generic-ui';
-export { Badge, Col, FadeAnimation, Field, Form, Grid, Header, Image, IncDecField, InfiniteScroll, Mapper, Modal, OverflowImages, Popover, Rate, Redirect, Row, Section, Selectfield, Show, ThreeDot, Upload, appStyles, notification, useForm } from '@reactivers/generic-ui';
+import { Button, Card, ColorPicker, EmptyResult, ListItem, appStyles, Modal as Modal$1, notification, notificationPusher as notificationPusher$1, Selectfield, Tag, Textfield, TextListField } from '@reactivers/generic-ui';
+export { Badge, Col, FadeAnimation, Field, Form, Grid, Header, Image, IncDecField, InfiniteScroll, Mapper, OverflowImages, Popover, Rate, Redirect, Row, Section, Show, ThreeDot, Upload, appStyles, notification, useForm } from '@reactivers/generic-ui';
 import React from 'react';
 import { takeUndefinedAsTrue, takeIf, isNullOrUndefined, coalasce } from '@reactivers/hooks';
 
@@ -128,6 +128,23 @@ var NButton = function NButton(props) {
   }, rest));
 };
 
+var NCard = function NCard(props) {
+  var _className = props.className,
+      _cardStyle = props.cardStyle,
+      rest = _objectWithoutProperties(props, ["className", "cardStyle"]);
+
+  var cardStyle = {
+    backgroundColor: 'transparent'
+  };
+  if (_cardStyle) cardStyle = _objectSpread2(_objectSpread2({}, cardStyle), _cardStyle);
+  var className = "neumorphic-outset ";
+  if (_className) className += _className;
+  return /*#__PURE__*/React.createElement(Card, _extends({
+    className: className,
+    cardStyle: cardStyle
+  }, rest));
+};
+
 var NColorPicker = function NColorPicker(props) {
   var _inputClassName = props.inputClassName,
       _colorClassName = props.colorClassName,
@@ -172,6 +189,10 @@ var Loading = function Loading(props) {
   return /*#__PURE__*/React.createElement("div", {
     style: _objectSpread2({}, appStyles.center)
   }, "Y\xFCkleniyor");
+};
+
+var Modal = function Modal(props) {
+  return /*#__PURE__*/React.createElement(Modal$1, props);
 };
 
 var Neumorphic = function Neumorphic(props) {
@@ -228,20 +249,15 @@ var PageTitle = function PageTitle(props) {
   }, title);
 };
 
-var NCard = function NCard(props) {
+var NSelectfield = function NSelectfield(props) {
   var _className = props.className,
-      _cardStyle = props.cardStyle,
-      rest = _objectWithoutProperties(props, ["className", "cardStyle"]);
+      rest = _objectWithoutProperties(props, ["className"]);
 
-  var cardStyle = {
-    backgroundColor: 'transparent'
-  };
-  if (_cardStyle) cardStyle = _objectSpread2(_objectSpread2({}, cardStyle), _cardStyle);
-  var className = "neumorphic-outset ";
+  var className = 'neumorphic-input';
   if (_className) className += _className;
-  return /*#__PURE__*/React.createElement(Card, _extends({
+  return /*#__PURE__*/React.createElement(Selectfield, _extends({
     className: className,
-    cardStyle: cardStyle
+    selectFieldClassName: "neumorphic-select-field"
   }, rest));
 };
 
@@ -290,4 +306,4 @@ var NTextListField = function NTextListField(props) {
   }, rest));
 };
 
-export { NButton as Button, NCard as Card, NColorPicker as ColorPicker, NEmptyResult as EmptyResult, NListItem as ListItem, Loading, Neumorphic, PageTitle, NTag as Tag, NTextListField as TextListField, NTextfield as Textfield };
+export { NButton as Button, NCard as Card, NColorPicker as ColorPicker, NEmptyResult as EmptyResult, NListItem as ListItem, Loading, Modal, Neumorphic, PageTitle, NSelectfield as Selectfield, NTag as Tag, NTextListField as TextListField, NTextfield as Textfield };
