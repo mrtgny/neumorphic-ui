@@ -3,6 +3,10 @@
 This package based on [@reactivers/generic-ui](https://github.com/mrtgny/generic-ui) and it
 uses [@reactivers/hooks](https://github.com/mrtgny/hooks).
 
+# Demo
+
+Live [demo](https://takvim.tk)
+
 # Usage
 
 ```js
